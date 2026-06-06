@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:mobile="http://www.mobile.googlebot.com/schemas/mobile/1.0">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://vedic-astrologer.com/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://vedic-astrologer.com/og-image.jpg</image:loc>
+      <image:title>VedicAstrologer - Vedic Astrology Platform</image:title>
+    </image:image>
+  </url>
+
+  <!-- Birth Chart Overview Section -->
+  <url>
+    <loc>https://vedic-astrologer.com/#birth-chart-overview</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Personality Analysis Section -->
+  <url>
+    <loc>https://vedic-astrologer.com/#personality-analysis</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Career & Finance Section -->
+  <url>
+    <loc>https://vedic-astrologer.com/#career-astrology</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Financial Astrology Section -->
+  <url>
+    <loc>https://vedic-astrologer.com/#financial-astrology</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Love & Relationship Section -->
+  <url>
+    <loc>https://vedic-astrologer.com/#love-relationship</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Marriage Prediction Section -->
+  <url>
+    <loc>https://vedic-astrologer.com/#marriage-prediction</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Health Astrology Section -->
+  <url>
+    <loc>https://vedic-astrologer.com/#health-astrology</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Future Prediction Section -->
+  <url>
+    <loc>https://vedic-astrologer.com/#future-prediction</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Success Analysis Section -->
+  <url>
+    <loc>https://vedic-astrologer.com/#success-analysis</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Lucky Factors Section -->
+  <url>
+    <loc>https://vedic-astrologer.com/#lucky-factors</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Remedies Section -->
+  <url>
+    <loc>https://vedic-astrologer.com/#remedies</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Action Plan Section -->
+  <url>
+    <loc>https://vedic-astrologer.com/#action-plan</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

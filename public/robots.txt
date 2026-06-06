@@ -1,0 +1,42 @@
+# VedicAstrologer robots.txt
+# Allow all web crawlers to index the site
+
+User-agent: *
+Allow: /
+
+# Specific rules for search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Disallow bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://vedic-astrologer.com/sitemap.xml
+
+# Crawl delay and request rate
+Crawl-delay: 1
+Request-rate: 1/1s
+
+# Avoid crawling unnecessary paths
+Disallow: /admin
+Disallow: /api
+Disallow: /*.json$
+Disallow: /node_modules
+Disallow: /.git

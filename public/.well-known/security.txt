@@ -1,0 +1,4 @@
+Contact: security@vedic-astrologer.com
+Expires: 2027-06-06T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://vedic-astrologer.com/.well-known/security.txt

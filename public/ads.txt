@@ -1,0 +1,9 @@
+# Authorized Digital Sellers List for vedic-astrologer.com
+# For more information about ads.txt, please visit: https://iabtechlab.com/ads-txt/
+
+# Direct seller
+vedic-astrologer.com, direct, f08c47fac0942fa0
+
+# Ad networks (add your actual account IDs if using any)
+# google.com, pub-xxxxxxxxxxxxxxxx, DIRECT, f08c47fac0942fa0
+# facebook.com, xxxxxxxxxxxxx, DIRECT, c3e20eae3f05e7f7
