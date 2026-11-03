@@ -8,7 +8,6 @@ import { LoveMarriageHealth } from './components/sections/LoveMarriageHealth';
 import { FuturePredictions } from './components/sections/FuturePredictions';
 import { SuccessLuckyRemedies } from './components/sections/SuccessLuckyRemedies';
 import { ActionPlan } from './components/sections/ActionPlan';
-import { SeoData } from './components/sections/SeoData';
 import { Moon, Sparkles, ChevronLeft, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useMetaTags } from './hooks/useMetaTags';
@@ -76,19 +75,24 @@ function App() {
           <motion.div
             className="flex items-center gap-3 cursor-pointer group"
             onClick={handleReset}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-              className="relative"
+              transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+              className="relative flex h-12 w-12 items-center justify-center rounded-full border border-gold-200/80 bg-[radial-gradient(circle_at_35%_30%,rgba(255,240,180,0.95),rgba(234,179,8,0.58)_18%,rgba(15,23,42,0.86)_62%)] shadow-[0_0_26px_rgba(250,204,21,0.28)]"
             >
-              <Moon className="w-8 h-8 text-gold-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.5)]" />
+              <span className="absolute inset-1 rounded-full border border-gold-100/70" />
+              <Moon className="relative z-10 h-6 w-6 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
+              <Star className="absolute -right-1 -top-1 h-3.5 w-3.5 rounded-full fill-yellow-200 text-yellow-200 drop-shadow-[0_0_12px_rgba(250,204,21,0.9)]" />
             </motion.div>
-            <motion.h1 className="text-2xl font-serif font-bold text-white tracking-wide group-hover:text-gold-400 transition-colors">
-              Vedic<span className="bg-gradient-to-r from-gold-400 to-rose-400 bg-clip-text text-transparent">Astrologer</span>
-            </motion.h1>
+            <div className="leading-none">
+              <div className="text-[10px] font-semibold uppercase tracking-[0.26em] text-gold-200/90">Vedic</div>
+              <motion.h1 className="mt-0.5 text-lg sm:text-xl font-serif font-bold tracking-[0.08em] text-white group-hover:text-gold-200 transition-colors">
+                <span className="bg-gradient-to-r from-yellow-200 via-gold-300 to-rose-200 bg-clip-text text-transparent">ASTROLOGER</span>
+              </motion.h1>
+            </div>
           </motion.div>
           
           {userData && (
@@ -108,35 +112,61 @@ function App() {
       <main className="relative z-10 w-full">
         {!userData ? (
           <motion.div
-            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 min-h-[calc(100vh-80px)] flex flex-col items-center justify-center"
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 min-h-[calc(100vh-80px)]"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            {/* Welcome Section */}
-            <motion.div
-              className="text-center mb-12 max-w-2xl"
-              variants={itemVariants}
-            >
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="inline-block mb-6"
-              >
-                <Sparkles className="w-12 h-12 text-gold-400 drop-shadow-[0_0_15px_rgba(250,204,21,0.6)]" />
-              </motion.div>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white mb-4">
-                Your Cosmic <span className="gradient-text">Blueprint</span>
-              </h2>
-              <p className="text-base sm:text-lg text-white/70 leading-relaxed">
-                Discover your destiny through ancient Vedic astrology. Generate a comprehensive report tailored to your unique cosmic signature.
-              </p>
-            </motion.div>
+            <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr]">
+              <motion.div className="relative z-10" variants={itemVariants}>
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold-400/30 bg-gold-500/10 text-gold-200 text-sm font-medium mb-6 backdrop-blur-sm"
+                >
+                  <Sparkles className="w-4 h-4" />
+                  Ancient wisdom • Personalized guidance
+                </motion.div>
 
-            {/* Form */}
-            <motion.div variants={itemVariants}>
-              <UserDataForm onSubmit={setUserData} />
-            </motion.div>
+                <h2 className="max-w-xl text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white leading-[0.95] mb-5">
+                  Your Cosmic <span className="gradient-text">Blueprint</span>
+                </h2>
+
+                <p className="max-w-xl text-base sm:text-lg text-white/75 leading-relaxed mb-7">
+                  Discover your destiny through Vedic astrology with a deeply personalized report covering life path, love, career, health, timing, and remedies.
+                </p>
+
+                <div className="flex flex-wrap gap-2.5 mb-8">
+                  {['Birth Chart', 'Career Forecast', 'Marriage Timing', 'Lucky Remedies'].map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-sm text-white/80 backdrop-blur-sm"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-3 max-w-xl">
+                  <div className="glass rounded-2xl p-4">
+                    <div className="text-2xl font-bold text-gold-300">12</div>
+                    <div className="text-sm text-white/70">Life houses</div>
+                  </div>
+                  <div className="glass rounded-2xl p-4">
+                    <div className="text-2xl font-bold text-gold-300">7</div>
+                    <div className="text-sm text-white/70">Major life areas</div>
+                  </div>
+                  <div className="glass rounded-2xl p-4">
+                    <div className="text-2xl font-bold text-gold-300">1:1</div>
+                    <div className="text-sm text-white/70">Personal reading</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div variants={itemVariants} className="relative z-10">
+                <UserDataForm onSubmit={setUserData} />
+              </motion.div>
+            </div>
 
             {/* Decorative Elements */}
             <motion.div
@@ -233,10 +263,6 @@ function App() {
 
               <motion.div variants={itemVariants}>
                 <ActionPlan user={userData} />
-              </motion.div>
-
-              <motion.div variants={itemVariants}>
-                <SeoData user={userData} />
               </motion.div>
             </motion.div>
           </motion.div>

@@ -136,7 +136,7 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
               {/* Time of Birth */}
               <div>
                 <label className="block text-xs sm:text-sm font-semibold text-white/90 mb-2 uppercase tracking-wide">
-                  Time of Birth
+                  Time of Birth <span className="text-white/50 font-medium normal-case">(optional)</span>
                 </label>
                 <div className="relative">
                   <motion.div
@@ -147,7 +147,6 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
                   </motion.div>
                   <input
                     type="time"
-                    required
                     value={formData.birthTime}
                     onChange={(e) => setFormData({ ...formData, birthTime: e.target.value })}
                     onFocus={() => setFocused('time')}
@@ -161,7 +160,7 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
             {/* Place of Birth */}
             <motion.div variants={itemVariants}>
               <label className="block text-xs sm:text-sm font-semibold text-white/90 mb-2 uppercase tracking-wide">
-                Place of Birth
+                Place of Birth <span className="text-white/50 font-medium normal-case">(optional)</span>
               </label>
               <div className="relative">
                 <motion.div
@@ -172,13 +171,12 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
                 </motion.div>
                 <input
                   type="text"
-                  required
                   value={formData.birthPlace}
                   onChange={(e) => setFormData({ ...formData, birthPlace: e.target.value })}
                   onFocus={() => setFocused('place')}
                   onBlur={() => setFocused(null)}
                   className="input-glass pl-10 pr-4"
-                  placeholder="e.g. New York, USA"
+                  placeholder="e.g. New York, USA (optional)"
                 />
               </div>
             </motion.div>
@@ -186,17 +184,21 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
             {/* Submit Button */}
             <motion.button
               type="submit"
-              className="w-full py-3 sm:py-4 px-4 mt-6 sm:mt-8 bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 hover:from-gold-300 hover:via-gold-400 hover:to-gold-500 text-mystic-950 font-bold font-semibold rounded-xl shadow-glow hover:shadow-glow-lg transition-all duration-300 flex items-center justify-center gap-2 group"
-              whileHover={{ scale: 1.02, boxShadow: '0 0 40px rgba(234, 179, 8, 0.4)' }}
-              whileTap={{ scale: 0.98 }}
+              className="group relative mt-6 sm:mt-8 flex w-full items-center justify-center gap-3 overflow-hidden rounded-2xl border border-gold-300/80 bg-[linear-gradient(135deg,#fef3c7_0%,#facc15_25%,#f9a8d4_100%)] px-5 py-3.5 text-base font-semibold text-mystic-950 shadow-[0_18px_40px_rgba(250,204,21,0.38)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_26px_50px_rgba(250,204,21,0.48)] active:translate-y-0 sm:py-4"
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.99 }}
             >
-              <span>Generate My Personalized Report</span>
-              <motion.div
-                animate={{ x: [0, 4, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.div>
+              <span className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.75),_transparent_52%)]" />
+              <span className="relative flex items-center justify-center gap-3">
+                <span>Generate My Personalized Report</span>
+                <motion.div
+                  animate={{ x: [0, 4, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                  className="flex items-center justify-center"
+                >
+                  <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </motion.div>
+              </span>
             </motion.button>
           </form>
 
