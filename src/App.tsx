@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { UserDetails } from './types';
 import { UserDataForm } from './components/UserDataForm';
 import { BirthChartOverview } from './components/sections/BirthChartOverview';
@@ -26,9 +26,23 @@ import {
 import { motion } from 'framer-motion';
 import { useMetaTags } from './hooks/useMetaTags';
 import { generateMetaTags } from './config/seo';
+import {
+  buildOrganizationSchema,
+  buildSoftwareApplicationSchema,
+  buildWebPageSchema,
+  buildWebSiteSchema,
+  injectStructuredData,
+} from './seo/schema';
 
 function App() {
   const [userData, setUserData] = useState<UserDetails | null>(null);
+
+  useEffect(() => {
+    injectStructuredData(buildOrganizationSchema(), 'vedic-astrologer-organization-schema');
+    injectStructuredData(buildWebSiteSchema(), 'vedic-astrologer-website-schema');
+    injectStructuredData(buildWebPageSchema('Home'), 'vedic-astrologer-webpage-schema');
+    injectStructuredData(buildSoftwareApplicationSchema(), 'vedic-astrologer-app-schema');
+  }, []);
 
   // Update meta tags based on current page state
   useMetaTags(generateMetaTags(userData ? 'report' : 'home', userData));

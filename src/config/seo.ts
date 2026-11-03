@@ -1,12 +1,15 @@
+import { getCanonicalUrl, getSiteBaseUrl } from '../seo/site';
+
 export const SEO_CONFIG = {
-  baseUrl: 'https://vedic-astrologer.com',
+  baseUrl: getSiteBaseUrl(),
   siteName: 'VedicAstrologer',
   defaultTitle: 'VedicAstrologer | Personalized Vedic Astrology & Life Destiny Report',
   defaultDescription:
     'Discover your cosmic blueprint with VedicAstrologer. Get personalized Vedic astrology readings, birth chart analysis, career predictions, and life guidance based on ancient Jyotish principles.',
-  defaultImage: 'https://vedic-astrologer.com/og-image.jpg',
+  defaultImage: '/og-image.svg',
   twitter: '@vedic_astrologer',
   locale: 'en_US',
+  themeColor: '#141b2d',
 };
 
 export const PAGES_SEO = {
@@ -37,17 +40,28 @@ export const generateMetaTags = (page: 'home' | 'report', pageData?: any) => {
       ? config.description(pageData?.name || 'Your')
       : config.description;
 
+  const canonicalUrl = getCanonicalUrl(config.path);
+  const absoluteImage = SEO_CONFIG.baseUrl
+    ? `${SEO_CONFIG.baseUrl}${SEO_CONFIG.defaultImage}`
+    : SEO_CONFIG.defaultImage;
+
   return {
     title,
     description,
     keywords: config.keywords || undefined,
-    canonical: `${SEO_CONFIG.baseUrl}${config.path}`,
+    canonical: canonicalUrl,
     ogTitle: title,
     ogDescription: description,
-    ogImage: SEO_CONFIG.defaultImage,
-    ogUrl: `${SEO_CONFIG.baseUrl}${config.path}`,
+    ogImage: absoluteImage,
+    ogUrl: canonicalUrl,
+    ogSiteName: SEO_CONFIG.siteName,
+    ogLocale: SEO_CONFIG.locale,
     twitterTitle: title,
     twitterDescription: description,
-    twitterImage: SEO_CONFIG.defaultImage,
+    twitterImage: absoluteImage,
+    twitterSite: SEO_CONFIG.twitter,
+    twitterCreator: SEO_CONFIG.twitter,
+    themeColor: SEO_CONFIG.themeColor,
+    robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   };
 };
