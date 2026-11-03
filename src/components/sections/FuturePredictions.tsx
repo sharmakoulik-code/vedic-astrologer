@@ -17,12 +17,12 @@ export const FuturePredictions: React.FC<{ user: UserDetails }> = ({ user }) => 
           </div>
           <h3 className="text-2xl font-bold text-mystic-900 mb-4">Next 12 Months: The Seed of Transformation</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            For you, {user.name}, the immediate horizon is characterized by the dynamic energy of preparation and planting seeds. You are entering a sub-period that heavily activates your 3rd and 9th houses. This means travel, short-term courses, and intense networking are highly probable. 
+            The next 12 months may bring a strong sense of motion, learning, and recalibration for {user.name}. Some people with this pattern find that travel, study, and networking become more visible themes, but the outcome is always shaped by the choices made in real life.
           </p>
           <ul className="list-disc pl-5 text-gray-700 space-y-2">
-            <li><strong>Opportunities:</strong> Rapid skill acquisition; a chance meeting that leads to a profitable collaboration.</li>
-            <li><strong>Challenges:</strong> Feeling overwhelmed by options; the need to prioritize ruthlessly.</li>
-            <li><strong>Important Changes:</strong> A shift in your daily routine; distancing yourself from a stagnant relationship or habit.</li>
+            <li><strong>Possible themes:</strong> Skill-building, fresh perspectives, and productive conversations.</li>
+            <li><strong>Possible challenges:</strong> Overcommitment, information overload, and the need to prioritize.</li>
+            <li><strong>Helpful mindset:</strong> Treat the period as a learning cycle rather than a fixed prediction.</li>
           </ul>
         </div>
 
@@ -32,12 +32,12 @@ export const FuturePredictions: React.FC<{ user: UserDetails }> = ({ user }) => 
           </div>
           <h3 className="text-2xl font-bold text-mystic-900 mb-4">Next 3 Years: Building the Fortress</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            As you move into the next three years, the energetic focus shifts to the 4th and 10th houses—the foundational pillars of home and career. This is a period of structural building. You will likely acquire property, establish a more permanent base, or reach a pinnacle position within your chosen field. The growth during this phase is not explosive, but rather steady, permanent, and compounding.
+            In the next three years, certain chart patterns may emphasize stability, long-term planning, and a stronger focus on home, reputation, or foundational work. This is often a period of building structure rather than sudden breakthroughs, and it rewards consistency.
           </p>
           <ul className="list-disc pl-5 text-gray-700 space-y-2">
-            <li><strong>Opportunities:</strong> Leadership roles; real estate investments; establishing a solid domestic foundation.</li>
-            <li><strong>Challenges:</strong> Balancing the heavy demands of work with the need for domestic tranquility.</li>
-            <li><strong>Growth Periods:</strong> Mid-way through this cycle, a significant mentor will elevate your professional status.</li>
+            <li><strong>Possible themes:</strong> Home stability, professional maturity, and stronger long-range planning.</li>
+            <li><strong>Possible challenges:</strong> Work-life imbalance or over-responsibility.</li>
+            <li><strong>Helpful mindset:</strong> Focus on durable foundations instead of short-term validation.</li>
           </ul>
         </div>
 
@@ -47,10 +47,10 @@ export const FuturePredictions: React.FC<{ user: UserDetails }> = ({ user }) => 
           </div>
           <h3 className="text-2xl font-bold text-mystic-900 mb-4">Next 5 to 10 Years: Mastery and Expansion</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Looking at the macro-level transits over the next decade, you are moving toward a period of profound spiritual and material synthesis. In the next 5 years, you will consolidate your gains and likely begin a side venture that turns into your primary focus. By the 10-year mark, you will be in a Dasha phase that completely supports autonomy. You will have built enough security to operate entirely on your own terms. This decade represents the culmination of your early struggles into a grand, cohesive life narrative of success and self-mastery.
+            Over a longer horizon, the chart may suggest a period in which personal authority, independence, and a stronger sense of direction become more important. This is not a promise of a fixed outcome but a reminder that long-term growth often comes from disciplined effort, clear boundaries, and strategic choices.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            The most important life lesson during this macro-period is learning to delegate. Your success potential is virtually unlimited if you can build a trusted team to handle the minutiae, freeing you to operate exclusively in your zone of genius.
+            The most useful focus during this broader period is to identify where your attention, resources, and energy are best used. A steady plan often matters more than dramatic timing.
           </p>
         </div>
       </div>

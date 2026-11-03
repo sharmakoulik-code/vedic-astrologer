@@ -12,20 +12,20 @@ export const SuccessLuckyRemedies: React.FC<{ user: UserDetails }> = ({ user }) 
         </h2>
         
         <p className="text-lg text-mystic-100 leading-relaxed mb-8">
-          Success, from a karmic perspective, is the alignment of your daily actions with your soul's deepest intent. For {user.name}, the potential for recognition is immense, provided you navigate your inherent obstacles with awareness.
+          Success is often described in astrology as a blend of personal effort, timing awareness, and alignment with one’s strengths. For {user.name}, the chart may reflect a need to focus on a clear direction and avoid scattering energy across too many competing priorities.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div className="bg-mystic-900/80 rounded-2xl p-6 border border-white/10">
             <h3 className="text-xl font-bold text-white mb-3">Main Obstacles</h3>
             <p className="text-mystic-100 leading-relaxed">
-              Your primary obstacle is the diffusion of energy. You have so many interests and capabilities that you can easily become a "jack of all trades, master of none." Additionally, a karmic knot in your chart indicates a recurrent theme of self-doubt right before a major breakthrough. 
+              A common challenge in this kind of chart is scattered attention. When energy is divided across many goals, it becomes harder to see a clear path. A useful approach is to identify the few priorities that actually matter most and build momentum around them.
             </p>
           </div>
           <div className="bg-mystic-900/80 rounded-2xl p-6 border border-white/10">
             <h3 className="text-xl font-bold text-white mb-3">Areas Bringing Recognition</h3>
             <p className="text-mystic-100 leading-relaxed">
-              You are most likely to achieve lasting fame or deep respect in areas that require specialized, esoteric, or highly complex knowledge. When you position yourself as the ultimate authority on a niche subject, success flows effortlessly.
+              The chart often rewards mastery, depth, and consistent expertise rather than superficial breadth. Recognition tends to grow when a person becomes clearly useful in a specific domain rather than trying to excel everywhere at once.
             </p>
           </div>
         </div>
@@ -79,7 +79,7 @@ export const SuccessLuckyRemedies: React.FC<{ user: UserDetails }> = ({ user }) 
         </h2>
         
         <p className="text-lg text-mystic-100 leading-relaxed mb-6">
-          To mitigate the challenging planetary aspects and enhance the auspicious ones, Vedic astrology prescribes specific remedies. These are not magical fixes, but energetic realignments.
+          Traditional astrological remedies are best viewed as supportive rituals or reflection practices, not magical guarantees. They can help someone feel more intentional, grounded, and aligned, but they work best alongside real-life action and self-awareness.
         </p>
 
         <ul className="space-y-4">

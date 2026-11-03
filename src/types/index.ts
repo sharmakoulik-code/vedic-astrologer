@@ -3,4 +3,6 @@ export interface UserDetails {
   dob: string;
   birthTime?: string;
   birthPlace?: string;
+  latitude?: number;
+  longitude?: number;
 }

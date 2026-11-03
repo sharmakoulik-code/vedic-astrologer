@@ -11,7 +11,7 @@ export const PersonalityAnalysis: React.FC<{ user: UserDetails }> = ({ user }) =
       </h2>
       
       <p className="text-premium mb-8">
-        Your astrological DNA, <span className="text-yellow-300 font-semibold">{user.name}</span>, reveals a multifaceted personality characterized by depth, resilience, and a profound capacity for growth. The interplay of planetary forces at the time of your birth has woven a unique tapestry of psychological traits. Understanding these traits is the first step toward mastering your destiny.
+        For <span className="text-yellow-300 font-semibold">{user.name}</span>, astrology is often used as a lens for reflection rather than a fixed destiny. A chart can highlight recurring tendencies—such as curiosity, caution, intensity, or empathy—and those patterns can help a person understand where they may thrive or where they may need more clarity.
       </p>
 
       <div className="space-y-8">
@@ -20,7 +20,7 @@ export const PersonalityAnalysis: React.FC<{ user: UserDetails }> = ({ user }) =
             <Trophy className="w-6 h-6 text-yellow-400" /> Strengths
           </h3>
           <p className="text-premium-muted">
-            Your primary strengths lie in your remarkable analytical capacity and your unyielding determination. When you set your mind to a goal, you possess a laser-like focus that allows you to block out distractions and overcome significant obstacles. You have a natural gift for strategic thinking; you can anticipate problems before they arise and formulate effective contingency plans. Furthermore, your chart highlights a strong sense of integrity and a commitment to justice. You are a dependable ally and a fiercely loyal friend. Your intellectual curiosity is boundless, making you a lifelong learner who continuously adapts and evolves in the face of new information.
+            A chart like this often points to strengths such as thoughtful analysis, persistence, and the ability to solve problems methodically. People with these tendencies often value integrity, learn quickly, and do well when they can focus on a few meaningful goals instead of spreading themselves too thin.
           </p>
         </div>
 
@@ -29,7 +29,7 @@ export const PersonalityAnalysis: React.FC<{ user: UserDetails }> = ({ user }) =
             <Shield className="w-6 h-6 text-blue-300" /> Weaknesses
           </h3>
           <p className="text-premium-muted">
-            No chart is without its challenging aspects, and for you, the primary pitfall is a tendency towards overthinking and perfectionism. Because you hold yourself to exceptionally high standards, you may sometimes suffer from "paralysis by analysis," delaying action out of fear that conditions are not yet optimal. Additionally, the strong fiery influence in your chart can occasionally manifest as impatience or a sharp tongue when dealing with those who do not match your intellectual pace. Learning to embrace imperfection and cultivating patience with others' processes will be crucial for your personal development and inner peace.
+            Common growth edges in this kind of profile include overthinking, perfectionism, or holding too tightly to a plan before all the information has emerged. These patterns are not flaws to be eliminated; they are simply habits that become easier to manage once they are noticed and addressed with patience.
           </p>
         </div>
 
@@ -38,7 +38,7 @@ export const PersonalityAnalysis: React.FC<{ user: UserDetails }> = ({ user }) =
             <Eye className="w-6 h-6 text-yellow-400" /> Hidden Talents
           </h3>
           <p className="text-premium-muted">
-            Beneath your pragmatic exterior lies a profound, latent intuition that often borders on psychic receptivity. You possess an uncanny ability to "read the room" and sense the underlying motivations of others, even when they attempt to conceal them. If cultivated, this intuitive empathy can be an extraordinary asset in negotiations, counseling, or creative pursuits. Furthermore, your astrological configuration suggests a hidden talent for healing—whether that manifests physically through medicine, psychologically through therapy, or energetically through spiritual practices. You have the power to be a transformative catalyst for others.
+            A strong chart profile may also suggest hidden strengths in empathy, intuitive reading, and the ability to spot patterns that others miss. These talents are often most useful when paired with practical action, clear boundaries, and a willingness to keep learning through lived experience.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export const PersonalityAnalysis: React.FC<{ user: UserDetails }> = ({ user }) =
               <Star className="w-5 h-5 text-yellow-400" /> Leadership Ability
             </h3>
             <p className="text-premium-muted">
-              Your chart indicates a democratic rather than dictatorial leadership style. You lead by example and by articulating a compelling vision rather than through forceful coercion. People are naturally drawn to your quiet confidence and your competence. However, you are often reluctant to step into the spotlight unless necessary. When you do accept the mantle of leadership, you are highly effective at organizing teams and maximizing individual strengths. You have the potential to be a profoundly influential figure in your community or industry, provided you overcome your natural inclination to work entirely independently.
+              Leadership may show up less as overt dominance and more as calm direction, competence, and the ability to guide others through clarity. In practice, this kind of influence grows strongest when a person learns to trust collaboration instead of trying to carry every burden alone.
             </p>
           </div>
 
@@ -57,7 +57,7 @@ export const PersonalityAnalysis: React.FC<{ user: UserDetails }> = ({ user }) =
               <Heart className="w-5 h-5 text-pink-300" /> Emotional Nature
             </h3>
             <p className="text-premium-muted">
-              Emotionally, you are a deep well. While you may present a calm, rational facade to the outside world, your internal emotional life is rich, complex, and sometimes turbulent. You feel things with intense magnitude but often struggle to articulate these feelings verbally. You tend to process emotions internally, which can sometimes lead to feelings of isolation. It is imperative for you, <span className="text-yellow-300 font-semibold">{user.name}</span>, to find safe outlets for emotional expression—whether through art, writing, or a trusted confidant. Allowing yourself to be emotionally vulnerable is not a sign of weakness, but the key to unlocking true intimacy in your life.
+              Emotionally, many people with this pattern are thoughtful, reflective, and deeply feeling—even if they appear composed externally. The most helpful path is often to create regular outlets for expression, whether through journaling, art, conversation, or quiet routines that make emotional honesty easier to sustain.
             </p>
           </div>
         </div>

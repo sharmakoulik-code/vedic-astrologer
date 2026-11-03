@@ -42,7 +42,6 @@ export const NumerologyAnalysis: React.FC<NumerologyAnalysisProps> = ({ user }) 
     [manualDob, partnerDob, user.dob]
   );
 
-  const mulankDigitSum = day !== null ? String(day).split('').reduce((sum, digit) => sum + Number(digit), 0) : 0;
   const bhagyankDigitString = day !== null && month !== null && year !== null ? `${String(day).padStart(2, '0')}${String(month).padStart(2, '0')}${String(year)}` : '';
   const bhagyankDigitSum = bhagyankDigitString ? bhagyankDigitString.split('').reduce((sum, digit) => sum + Number(digit), 0) : 0;
 
