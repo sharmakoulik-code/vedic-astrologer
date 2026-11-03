@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+Disallow: /admin
+Disallow: /api
+Disallow: /node_modules
+Disallow: /.git
+Disallow: /*.json$
+
+Sitemap: /sitemap.xml
+
+# Keep crawler access broad while avoiding private or sensitive resources.
+# This file is intentionally environment-agnostic so it can be used for local development,
+# GitHub Pages, or a future custom domain without forcing a production URL.

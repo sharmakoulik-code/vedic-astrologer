@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0F172A"/>
+  <rect x="42" y="42" width="1116" height="546" rx="28" fill="url(#paint0_linear_1_2)" stroke="#F4C542" stroke-opacity="0.55"/>
+  <circle cx="289" cy="184" r="126" fill="#F4C542" fill-opacity="0.14"/>
+  <circle cx="894" cy="165" r="92" fill="#F4C542" fill-opacity="0.18"/>
+  <circle cx="854" cy="455" r="134" fill="#F4C542" fill-opacity="0.1"/>
+  <path d="M270 356C270 293.529 322.529 241 385 241H518C580.471 241 633 293.529 633 356V365C633 427.471 580.471 480 518 480H385C322.529 480 270 427.471 270 365V356Z" fill="#0F172A" fill-opacity="0.44" stroke="#F4C542" stroke-opacity="0.4"/>
+  <path d="M465 258L531 430H548L635 258H612L540 382L468 258H465Z" fill="#F4C542"/>
+  <path d="M695 250H862" stroke="#F4C542" stroke-width="10" stroke-linecap="round"/>
+  <path d="M695 302H819" stroke="#F4C542" stroke-width="10" stroke-linecap="round" opacity="0.7"/>
+  <path d="M695 354H845" stroke="#F4C542" stroke-width="10" stroke-linecap="round" opacity="0.6"/>
+  <path d="M695 406H771" stroke="#F4C542" stroke-width="10" stroke-linecap="round" opacity="0.55"/>
+  <text x="692" y="200" fill="#F8FAFC" font-family="Georgia, serif" font-size="52" font-weight="700">VedicAstrologer</text>
+  <text x="692" y="475" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="28" font-weight="600">Personalized Vedic astrology & life guidance</text>
+  <defs>
+    <linearGradient id="paint0_linear_1_2" x1="93" y1="88" x2="1065" y2="533" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1F2937"/>
+      <stop offset="0.5" stop-color="#111827"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+</svg>
