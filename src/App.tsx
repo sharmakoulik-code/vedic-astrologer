@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { UserDetails } from './types';
 import { UserDataForm } from './components/UserDataForm';
 import { BirthChartOverview } from './components/sections/BirthChartOverview';
@@ -34,8 +35,162 @@ import {
   injectStructuredData,
 } from './seo/schema';
 
+type SeoPageKey = 'about' | 'faq' | 'privacy-policy' | 'terms' | 'methodology' | 'disclaimer' | 'contact';
+
+const seoPageMap: Record<SeoPageKey, { kicker: string; title: string; lead: string; sideTitle: string; bullets: string[] }> = {
+  about: {
+    kicker: 'About us',
+    title: 'About VedicAstrologer',
+    lead: 'VedicAstrologer is designed as a digital experience for exploring Vedic astrology insights through birth chart interpretation, life guidance, relationship themes, and personalized reports.',
+    sideTitle: 'Purpose',
+    bullets: [
+      'Offer accessible astrology education and guidance.',
+      'Provide a clear digital report experience.',
+      'Support reflection, planning, and self-understanding.',
+      'Present traditional astrology in an understandable format.',
+    ],
+  },
+  faq: {
+    kicker: 'FAQ',
+    title: 'Common questions about Vedic astrology',
+    lead: 'Astrology can offer reflective insight into personality, cycles, and decision-making. This FAQ helps visitors understand the purpose, scope, and value of a Vedic chart reading.',
+    sideTitle: 'Quick answers',
+    bullets: [
+      'What is a birth chart? A map of planetary positions at the time of birth.',
+      'What is a moon sign? A sign-based reflection of emotional tendencies and inner patterns.',
+      'How does astrology help? It supports self-reflection and timing awareness.',
+      'Is astrology scientific? It is generally treated as symbolic and spiritual guidance, not a scientific prediction system.',
+    ],
+  },
+  'privacy-policy': {
+    kicker: 'Privacy',
+    title: 'Privacy policy',
+    lead: 'This page explains the privacy practices relevant to the VedicAstrologer experience, including how birth details and personal information may be collected or used when using the platform.',
+    sideTitle: 'Core principle',
+    bullets: [
+      'Only collect data necessary for a personalized astrology experience.',
+      'Protect user information as a matter of responsibility.',
+      'Do not expose personal data in public-facing content.',
+      'Use secure hosting and responsible platform practices.',
+    ],
+  },
+  terms: {
+    kicker: 'Terms',
+    title: 'Terms and conditions',
+    lead: 'By using VedicAstrologer, users agree to access the platform as an educational and entertainment-focused astrology experience. The content is intended for reflection and guidance, not as definitive scientific evidence or professional advice.',
+    sideTitle: 'Use responsibly',
+    bullets: [
+      'Do not treat astrology as a substitute for medical or legal guidance.',
+      'Use the platform for reflective insight and personal awareness.',
+      'Respect the privacy of others when submitting personal information.',
+      'Follow the platform’s actual operational and hosting rules.',
+    ],
+  },
+  methodology: {
+    kicker: 'Methodology',
+    title: 'Astrology methodology',
+    lead: 'This platform is designed around traditional Vedic astrology principles. Birth details are used to chart planetary placements, identify key house themes, and provide contextual interpretation for personality, timing, and life direction.',
+    sideTitle: 'Core principles',
+    bullets: [
+      'Birth date, time, and place are used to determine the chart.',
+      'Planetary positions are interpreted within the framework of Vedic astrology.',
+      'House themes and life areas guide the reading.',
+      'Interpretations are symbolic, reflective, and contextual.',
+    ],
+  },
+  disclaimer: {
+    kicker: 'Disclaimer',
+    title: 'Important reading note',
+    lead: 'Vedic astrology content is intended as a symbolic and reflective tool for personal insight. It should be treated as guidance for contemplation rather than guaranteed fact, prediction, or professional advice.',
+    sideTitle: 'Context matters',
+    bullets: [
+      'Astrology does not replace medical, legal, or psychological expertise.',
+      'Life decisions should be made using evidence and personal judgment.',
+      'Charts may offer insight, but they do not control outcomes.',
+      'Spiritual guidance is not a substitute for professional care.',
+    ],
+  },
+  contact: {
+    kicker: 'Contact',
+    title: 'Get in touch',
+    lead: 'For support, inquiries, feedback, or general questions about the VedicAstrologer experience, use the contact information made available on the project or business profile hosting this site.',
+    sideTitle: 'Contact details',
+    bullets: [
+      'Use the platform’s official support channel or contact form where available.',
+      'Provide a clear subject line for support or general questions.',
+      'Include any birth detail context only if relevant to a specific user-support request.',
+      'For urgent issues, contact the platform owner or hosting team through the official channels.',
+    ],
+  },
+};
+
+function SeoPage({ pageKey }: { pageKey: SeoPageKey }) {
+  const page = seoPageMap[pageKey];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-mystic-950 via-mystic-900 to-mystic-950 text-white">
+      <header className="sticky top-0 z-20 border-b border-white/10 bg-mystic-950/45 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-6 lg:px-8">
+          <Link to="/" className="flex items-center gap-3 text-white hover:text-[#f8d66f]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#f4c542]/80 bg-[radial-gradient(circle_at_35%_30%,rgba(255,236,180,0.95),rgba(244,197,66,0.7)_18%,rgba(15,23,42,0.9)_62%)]">
+              <Moon className="h-5 w-5" />
+            </div>
+            <div className="text-xs font-semibold uppercase tracking-[0.24em] text-[#f4c542]">Vedic</div>
+          </Link>
+
+          <nav className="hidden items-center gap-4 text-sm text-slate-200 md:flex">
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/faq">FAQ</Link>
+            <Link to="/methodology">Methodology</Link>
+            <Link to="/contact">Contact</Link>
+          </nav>
+        </div>
+      </header>
+
+      <main className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr]">
+          <div>
+            <span className="inline-flex rounded-full border border-[#f4c542]/30 bg-[#f4c542]/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#f8d66f]">
+              {page.kicker}
+            </span>
+            <h1 className="mt-5 text-4xl font-serif font-bold text-white md:text-5xl">{page.title}</h1>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 md:text-lg">{page.lead}</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link to="/" className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#f4c542] via-[#f7d15b] to-[#ffd970] px-5 py-3 text-sm font-bold text-mystic-950 shadow-[0_10px_28px_rgba(244,197,66,0.24)]">Generate My Reading</Link>
+              <Link to="/about" className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white">Learn More</Link>
+            </div>
+          </div>
+
+          <aside className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_54px_rgba(15,23,42,0.52)] backdrop-blur-md">
+            <h3 className="mb-4 text-xl font-bold text-white">{page.sideTitle}</h3>
+            <ul className="space-y-3 text-sm leading-6 text-slate-300">
+              {page.bullets.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span className="mt-1 text-[#f4c542]">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        </div>
+
+        <div className="mt-10 rounded-3xl border border-white/10 bg-white/[0.03] p-6 text-slate-300">
+          <p>
+            This page is part of the public trust and SEO layer for the site. It is intentionally kept separate from the astrology report experience so the app flow remains stable while the informational content stays accessible.
+          </p>
+        </div>
+      </main>
+    </div>
+  );
+}
+
 function App() {
+  const location = useLocation();
   const [userData, setUserData] = useState<UserDetails | null>(null);
+
+  const seoRoute = location.pathname.replace(/^\//, '').replace(/\/$/, '');
+  const seoPageKey = seoRoute && (seoRoute in seoPageMap ? seoRoute as SeoPageKey : null);
 
   useEffect(() => {
     injectStructuredData(buildOrganizationSchema(), 'vedic-astrologer-organization-schema');
@@ -46,6 +201,10 @@ function App() {
 
   // Update meta tags based on current page state
   useMetaTags(generateMetaTags(userData ? 'report' : 'home', userData));
+
+  if (seoPageKey) {
+    return <SeoPage pageKey={seoPageKey} />;
+  }
 
   const handleReset = () => setUserData(null);
 
@@ -158,7 +317,7 @@ function App() {
       </div>
 
       <header className="sticky top-0 z-20 border-b border-white/10 bg-mystic-950/45 backdrop-blur-xl">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
           <motion.div
             className="group flex cursor-pointer items-center gap-3"
             onClick={handleReset}
@@ -181,6 +340,14 @@ function App() {
               </motion.h1>
             </div>
           </motion.div>
+
+          <nav className="hidden items-center gap-4 text-sm text-slate-200 md:flex">
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/faq">FAQ</Link>
+            <Link to="/methodology">Methodology</Link>
+            <Link to="/contact">Contact</Link>
+          </nav>
 
           {userData && (
             <motion.button
