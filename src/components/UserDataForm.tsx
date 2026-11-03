@@ -45,13 +45,14 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
 
   return (
     <motion.div
-      className="w-full max-w-xl mx-auto px-4 sm:px-6"
+      id="user-data-form"
+      className="mx-auto w-full max-w-xl px-0 sm:px-2"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
       <motion.div
-        className="glass-lg rounded-3xl p-6 sm:p-10 relative overflow-hidden group"
+        className="glass-lg relative overflow-hidden rounded-3xl p-5 sm:p-8 md:p-10 group"
         whileHover={{ boxShadow: '0 0 40px rgba(234, 179, 8, 0.15)' }}
         transition={{ duration: 0.3 }}
       >
@@ -72,19 +73,19 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
             >
               <Sparkles className="w-8 h-8 text-gold-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.6)]" />
             </motion.div>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-2 sm:mb-3">
+            <h2 className="mb-2 text-2xl font-serif font-bold text-white sm:text-3xl md:text-4xl">
               Unlock Your <span className="gradient-text">Cosmic Destiny</span>
             </h2>
-            <p className="text-sm sm:text-base text-white/70 leading-relaxed">
-              Enter your precise birth details to generate your comprehensive Vedic astrology reading.
+            <p className="text-sm leading-6 text-white/70 sm:text-base md:text-lg">
+              Enter your birth details to receive a trusted, personalized Vedic astrology reading.
             </p>
           </motion.div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 md:space-y-6" noValidate>
             {/* Full Name */}
             <motion.div variants={itemVariants}>
-              <label className="block text-xs sm:text-sm font-semibold text-white/90 mb-2 uppercase tracking-wide">
+              <label className="mb-2 block text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 sm:text-xs">
                 Full Name
               </label>
               <div className="relative group">
@@ -101,8 +102,9 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   onFocus={() => setFocused('name')}
                   onBlur={() => setFocused(null)}
-                  className="input-glass pl-10 pr-4"
+                  className="input-glass min-h-[52px] pl-11 pr-4 text-base"
                   placeholder="e.g. Elena Rossi"
+                  aria-label="Full name"
                 />
               </div>
             </motion.div>
@@ -111,7 +113,7 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
             <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6" variants={itemVariants}>
               {/* Date of Birth */}
               <div>
-                <label className="block text-xs sm:text-sm font-semibold text-white/90 mb-2 uppercase tracking-wide">
+                <label className="mb-2 block text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 sm:text-xs">
                   Date of Birth
                 </label>
                 <div className="relative">
@@ -128,15 +130,16 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
                     onChange={(e) => setFormData({ ...formData, dob: e.target.value })}
                     onFocus={() => setFocused('dob')}
                     onBlur={() => setFocused(null)}
-                    className="input-glass pl-10 pr-4"
+                    className="input-glass min-h-[52px] pl-11 pr-4 text-base"
+                    aria-label="Date of birth"
                   />
                 </div>
               </div>
 
               {/* Time of Birth */}
               <div>
-                <label className="block text-xs sm:text-sm font-semibold text-white/90 mb-2 uppercase tracking-wide">
-                  Time of Birth <span className="text-white/50 font-medium normal-case">(optional)</span>
+                <label className="mb-2 block text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 sm:text-xs">
+                  Time of Birth <span className="font-medium normal-case text-white/60">(optional)</span>
                 </label>
                 <div className="relative">
                   <motion.div
@@ -151,7 +154,8 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
                     onChange={(e) => setFormData({ ...formData, birthTime: e.target.value })}
                     onFocus={() => setFocused('time')}
                     onBlur={() => setFocused(null)}
-                    className="input-glass pl-10 pr-4"
+                    className="input-glass min-h-[52px] pl-11 pr-4 text-base"
+                    aria-label="Time of birth"
                   />
                 </div>
               </div>
@@ -159,8 +163,8 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
 
             {/* Place of Birth */}
             <motion.div variants={itemVariants}>
-              <label className="block text-xs sm:text-sm font-semibold text-white/90 mb-2 uppercase tracking-wide">
-                Place of Birth <span className="text-white/50 font-medium normal-case">(optional)</span>
+              <label className="mb-2 block text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 sm:text-xs">
+                Place of Birth <span className="font-medium normal-case text-white/60">(optional)</span>
               </label>
               <div className="relative">
                 <motion.div
@@ -175,8 +179,9 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
                   onChange={(e) => setFormData({ ...formData, birthPlace: e.target.value })}
                   onFocus={() => setFocused('place')}
                   onBlur={() => setFocused(null)}
-                  className="input-glass pl-10 pr-4"
-                  placeholder="e.g. New York, USA (optional)"
+                  className="input-glass min-h-[52px] pl-11 pr-4 text-base"
+                  placeholder="e.g. New York, USA"
+                  aria-label="Place of birth"
                 />
               </div>
             </motion.div>
@@ -184,7 +189,7 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
             {/* Submit Button */}
             <motion.button
               type="submit"
-              className="group relative mt-6 sm:mt-8 flex w-full items-center justify-center gap-3 overflow-hidden rounded-2xl border border-gold-300/80 bg-[linear-gradient(135deg,#fef3c7_0%,#facc15_25%,#f9a8d4_100%)] px-5 py-3.5 text-base font-semibold text-mystic-950 shadow-[0_18px_40px_rgba(250,204,21,0.38)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_26px_50px_rgba(250,204,21,0.48)] active:translate-y-0 sm:py-4"
+              className="group relative mt-6 flex w-full items-center justify-center gap-3 overflow-hidden rounded-2xl border border-gold-300/80 bg-[linear-gradient(135deg,#fef3c7_0%,#facc15_25%,#f9a8d4_100%)] px-5 py-3.5 text-base font-semibold text-mystic-950 shadow-[0_18px_40px_rgba(250,204,21,0.38)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_26px_50px_rgba(250,204,21,0.48)] active:translate-y-0 sm:py-4"
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
             >
@@ -203,8 +208,23 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
           </form>
 
           {/* Footer Text */}
+          <motion.div className="mt-6 grid gap-2 sm:grid-cols-3" variants={itemVariants}>
+            {[
+              '✓ Private & Secure',
+              '✓ Personalized Insights',
+              '✓ Generated in Seconds',
+            ].map((badge) => (
+              <div
+                key={badge}
+                className="rounded-xl border border-[#f4c542]/15 bg-[#f4c542]/5 px-2 py-2 text-center text-[10px] font-medium text-[#f5d57a] sm:text-[11px]"
+              >
+                {badge}
+              </div>
+            ))}
+          </motion.div>
+
           <motion.p
-            className="text-center text-xs text-white/50 mt-6 sm:mt-8"
+            className="mt-6 text-center text-xs text-white/50 sm:mt-8"
             variants={itemVariants}
           >
             Your data is processed securely and used only to generate your personalized report.
