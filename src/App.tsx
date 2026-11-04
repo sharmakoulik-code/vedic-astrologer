@@ -472,27 +472,27 @@ function App() {
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <PersonalityAnalysis user={userData} />
+                <PersonalityAnalysis chart={chartSummary!} />
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <CareerFinance user={userData} />
+                <CareerFinance chart={chartSummary!} />
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <LoveMarriageHealth user={userData} />
+                <LoveMarriageHealth chart={chartSummary!} />
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <FuturePredictions user={userData} />
+                <FuturePredictions chart={chartSummary!} />
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <SuccessLuckyRemedies user={userData} />
+                <SuccessLuckyRemedies chart={chartSummary!} />
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <ActionPlan user={userData} />
+                <ActionPlan chart={chartSummary!} />
               </motion.div>
 
               <motion.div variants={itemVariants}>
