@@ -55,6 +55,7 @@ function App() {
     latitude: userData.latitude,
     longitude: userData.longitude,
     birthTime: userData.birthTime,
+    timezone: userData.timezone,
     locationLabel: userData.birthPlace || 'Birth location',
   }) : null;
 

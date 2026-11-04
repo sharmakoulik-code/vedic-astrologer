@@ -5,4 +5,6 @@ export interface UserDetails {
   birthPlace?: string;
   latitude?: number;
   longitude?: number;
+  timezone?: string;
+  geocoded?: boolean;
 }

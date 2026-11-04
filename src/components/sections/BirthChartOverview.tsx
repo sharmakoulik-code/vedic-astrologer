@@ -9,12 +9,14 @@ export const BirthChartOverview: React.FC<{ user: UserDetails; chart?: ReturnTyp
     latitude: user.latitude,
     longitude: user.longitude,
     birthTime: user.birthTime || '12:00',
+    timezone: user.timezone,
     locationLabel: user.birthPlace || 'Birth location',
   });
 
   const hasExactTime = Boolean(user.birthTime && user.birthTime.trim());
   const displayPlace = user.birthPlace || 'birth place not provided';
   const displayTime = user.birthTime || 'approximate time';
+  const hasLocation = Boolean(resolvedChart.hasLocation);
 
   return (
     <section className="mb-16 scroll-mt-24" id="birth-chart-overview">
@@ -24,18 +26,31 @@ export const BirthChartOverview: React.FC<{ user: UserDetails; chart?: ReturnTyp
       </h2>
 
       <p className="text-premium mb-8">
-        Welcome, <span className="text-yellow-300 font-semibold">{user.name || 'friend'}</span>. Based on your birth details from <span className="text-yellow-200">{displayPlace}</span> on <span className="text-yellow-200">{new Date(user.dob || Date.now()).toLocaleDateString()}</span> at <span className="text-yellow-200">{displayTime}</span>. {hasExactTime ? 'The chart below reflects the local birth time and ascendant.' : 'Exact birth time is not available, so Lagna and house-based timing are approximate.'}
+        Welcome, <span className="text-yellow-300 font-semibold">{user.name || 'friend'}</span>. Based on your birth details from <span className="text-yellow-200">{displayPlace}</span> on <span className="text-yellow-200">{new Date(user.dob || Date.now()).toLocaleDateString()}</span> at <span className="text-yellow-200">{displayTime}</span>. {hasLocation ? 'The chart below reflects the local birth time and calculated ascendant.' : 'A precise birth place and coordinates are needed for Lagna and house-based timing. Without them, only the planetary and nakshatra positions can be read.'}
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-        <div className="premium-card">
-          <h3 className="heading-secondary">
-            <Compass className="w-5 h-5 text-yellow-400" /> Ascendant (Lagna)
-          </h3>
-          <p className="text-premium-muted">
-            {hasExactTime ? `Your Lagna is ${resolvedChart.lagna}, which is a useful guide to your outward temperament and how you meet the world.` : `Because the exact birth time is missing, the Lagna is approximate. The computed rising sign is ${resolvedChart.lagna}. For a precise Lagna, an exact birth time is required.`}
-          </p>
-        </div>
+        {hasLocation && hasExactTime && resolvedChart.lagna && (
+          <div className="premium-card">
+            <h3 className="heading-secondary">
+              <Compass className="w-5 h-5 text-yellow-400" /> Ascendant (Lagna)
+            </h3>
+            <p className="text-premium-muted">
+              Your Lagna is {resolvedChart.lagna}, which is a useful guide to your outward temperament and how you meet the world.
+            </p>
+          </div>
+        )}
+
+        {(!hasLocation || !hasExactTime) && (
+          <div className="premium-card">
+            <h3 className="heading-secondary">
+              <Compass className="w-5 h-5 text-yellow-400" /> Ascendant (Lagna)
+            </h3>
+            <p className="text-premium-muted">
+              {hasLocation ? 'Because the exact birth time is missing, the Lagna remains approximate and is not shown until the precise birth time is supplied.' : 'A precise birth place and coordinates are required before Lagna and house placements are calculated.'}
+            </p>
+          </div>
+        )}
 
         <div className="premium-card">
           <h3 className="heading-secondary">

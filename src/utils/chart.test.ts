@@ -1,45 +1,63 @@
+import { existsSync, readFileSync } from 'node:fs';
+import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { buildChart } from './chart';
+import { localBirthToUtc } from './time';
+
+const fixturePath = path.resolve(__dirname, '__fixtures__/reference.json');
+const fixtureExists = existsSync(fixturePath);
+const skipMessage = 'Reference fixture missing. Run: pip install pyswisseph && python scripts/gen-fixtures.py';
+const maybeIt = fixtureExists ? it : it.skip;
+
+const fixture = fixtureExists ? JSON.parse(readFileSync(fixturePath, 'utf8')) as {
+  samples: Array<{
+    date: string;
+    time: string;
+    timezone: string;
+    latitude: number;
+    longitude: number;
+    sunLongitude: number;
+    moonLongitude: number;
+  }>;
+} : null;
 
 describe('chart utility', () => {
-  it('returns a verified Sagittarius Sun and Leo Moon for the 2024-01-01 sample', () => {
-    const chart = buildChart({
-      date: '2024-01-01',
-      latitude: 28.6139,
-      longitude: 77.209,
-      birthTime: '12:00',
-      locationLabel: 'New Delhi',
-    });
-
-    expect(chart.planets.Sun.sign).toBe('Sagittarius');
-    expect(chart.planets.Moon.sign).toBe('Leo');
-    expect(chart.moonNakshatra).toBeTruthy();
+  it('converts a local birth time to the correct UTC instant for the selected timezone', () => {
+    const utcInstant = localBirthToUtc('2024-01-15', '12:30', 'Asia/Kolkata');
+    expect(utcInstant.toISOString()).toBe('2024-01-15T07:00:00.000Z');
   });
 
-  it('returns a verified Gemini Sun and Capricorn Moon for the 1995-06-15 sample', () => {
+  it('does not silently default to 0,0 when location coordinates are missing', () => {
     const chart = buildChart({
-      date: '1995-06-15',
-      latitude: 28.6139,
-      longitude: 77.209,
-      birthTime: '18:30',
-      locationLabel: 'New Delhi',
+      date: '2024-01-15',
+      birthTime: '12:30',
+      timezone: 'Asia/Kolkata',
+      locationLabel: 'Unknown location',
     });
 
-    expect(chart.planets.Sun.sign).toBe('Gemini');
-    expect(chart.planets.Moon.sign).toBe('Capricorn');
-    expect(chart.moonPada).toBeGreaterThan(0);
+    expect(chart.hasLocation).toBe(false);
+    expect(chart.lagna).toBeNull();
+    expect(chart.housePlacements).toBeNull();
+    expect(chart.locationLabel).toBe('Unknown location');
   });
 
-  it('returns a verified Aquarius Sun and Gemini Moon for the 1990-03-05 sample', () => {
-    const chart = buildChart({
-      date: '1990-03-05',
-      latitude: 28.6139,
-      longitude: 77.209,
-      birthTime: '05:45',
-      locationLabel: 'New Delhi',
-    });
+  maybeIt(`matches the generated Swiss Ephemeris reference fixture${fixtureExists ? '' : ` — ${skipMessage}`}`, () => {
+    if (!fixture) {
+      return;
+    }
 
-    expect(chart.planets.Sun.sign).toBe('Aquarius');
-    expect(chart.planets.Moon.sign).toBe('Gemini');
+    for (const sample of fixture.samples) {
+      const chart = buildChart({
+        date: sample.date,
+        latitude: sample.latitude,
+        longitude: sample.longitude,
+        birthTime: sample.time,
+        timezone: sample.timezone,
+        locationLabel: 'Reference fixture',
+      });
+
+      expect(chart.planets.Sun.longitude).toBeCloseTo(sample.sunLongitude, 1);
+      expect(chart.planets.Moon.longitude).toBeCloseTo(sample.moonLongitude, 1);
+    }
   });
 });
