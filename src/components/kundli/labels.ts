@@ -1,0 +1,36 @@
+// All visible text for the Kundli section lives here so it can be translated later.
+export const KUNDLI_LABELS = {
+  sectionTitle: 'Kundli (Birth Chart)',
+  intro: 'Your Rashi chart shows where each planet sat in the sky at the moment of birth. Houses are counted from the Lagna (ascendant) using whole-sign houses and the Lahiri ayanamsa.',
+  northTab: 'North Indian',
+  southTab: 'South Indian',
+  styleSwitchLabel: 'Chart style',
+  ascendantShort: 'Asc',
+  ascendantFull: 'Ascendant',
+  house: 'House',
+  empty: 'empty',
+  chartTitleNorth: 'North Indian style Rashi chart',
+  chartTitleSouth: 'South Indian style Rashi chart',
+  planetTableTitle: 'Planet positions',
+  planetTableCaption: 'Sidereal positions at the time of birth',
+  colPlanet: 'Planet',
+  colSign: 'Sign',
+  colDegree: 'Degree',
+  colNakshatra: 'Nakshatra (pada)',
+  colHouse: 'House',
+  dashaTitle: 'Vimshottari Dasha periods',
+  dashaCaption: 'Planetary periods counted from the Moon’s nakshatra',
+  colLord: 'Period lord',
+  colStart: 'Starts',
+  colEnd: 'Ends',
+  currentBadge: 'Current',
+  currentAntardasha: 'Current sub-period (Antardasha)',
+  needsLocationNote: 'The chart diagram and houses need a birth place with a timezone and a birth time. The table below lists planets by sign only, and positions may be approximate.',
+  needsTimeNote: 'Dasha periods are hidden because they depend on the exact birth time and timezone.',
+  disclaimer: 'For guidance and entertainment only.',
+} as const;
+
+export const SIGN_SHORT: Record<string, string> = {
+  Aries: 'Ari', Taurus: 'Tau', Gemini: 'Gem', Cancer: 'Can', Leo: 'Leo', Virgo: 'Vir',
+  Libra: 'Lib', Scorpio: 'Sco', Sagittarius: 'Sag', Capricorn: 'Cap', Aquarius: 'Aqu', Pisces: 'Pis',
+};

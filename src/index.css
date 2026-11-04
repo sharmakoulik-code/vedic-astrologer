@@ -321,3 +321,12 @@
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
   }
 }
+
+
+/* Kundli tables */
+.kundli-table { border-collapse: collapse; color: #f8fafc; }
+.kundli-table th, .kundli-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid rgba(255, 255, 255, 0.12); font-weight: 400; }
+.kundli-table thead th { color: #fde68a; font-weight: 600; white-space: nowrap; }
+.kundli-table tbody th { font-weight: 600; }
+.kundli-current-row { background: rgba(250, 204, 21, 0.12); }
+.kundli-badge { margin-left: 0.5rem; padding: 0.1rem 0.5rem; border-radius: 999px; background: #facc15; color: #0f172a; font-size: 0.7rem; font-weight: 700; }

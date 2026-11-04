@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { UserDetails } from './types';
 import { UserDataForm } from './components/UserDataForm';
 import { BirthChartOverview } from './components/sections/BirthChartOverview';
+import { KundliSection } from './components/sections/KundliSection';
 import { buildChart } from './utils/chart';
 import { PersonalityAnalysis } from './components/sections/PersonalityAnalysis';
 import { CareerFinance } from './components/sections/CareerFinance';
@@ -470,6 +471,10 @@ function App() {
             >
               <motion.div variants={itemVariants}>
                 <BirthChartOverview user={userData} chart={chartSummary || undefined} />
+              </motion.div>
+
+              <motion.div variants={itemVariants}>
+                <KundliSection chart={chartSummary!} />
               </motion.div>
 
               <motion.div variants={itemVariants}>
