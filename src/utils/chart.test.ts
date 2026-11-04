@@ -32,6 +32,22 @@ describe('chart utility', () => {
     expect(chart.housePlacements).toBeNull();
   });
 
+  it('omits Lagna and house placements when a birth time has no timezone', () => {
+    const chart = buildChart({
+      date: '2024-01-15',
+      birthTime: '12:30',
+      latitude: 12.9716,
+      longitude: 77.5946,
+    });
+
+    expect(chart.needsTimezone).toBe(true);
+    expect(chart.hasLocation).toBe(false);
+    expect(chart.lagna).toBeNull();
+    expect(chart.lagnaLongitude).toBeNull();
+    expect(chart.housePlacements).toBeNull();
+    expect(Object.values(chart.planets).every((planet) => planet.house === null)).toBe(true);
+  });
+
   it('has a reference fixture (run: pip install pyswisseph tzdata && python scripts/gen-fixtures.py)', () => {
     expect(existsSync(fixturePath)).toBe(true);
   });

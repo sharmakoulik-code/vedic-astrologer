@@ -23,6 +23,7 @@ export interface BirthChart {
   longitude?: number;
   timezone?: string | null;
   hasLocation: boolean;
+  needsTimezone: boolean;
   lagna: string | null;
   lagnaLongitude: number | null;
   housePlacements: Record<string, number> | null;
@@ -272,7 +273,7 @@ export const buildChart = (input: {
 }): BirthChart => {
   const latitude = Number.isFinite(input.latitude) ? Number(input.latitude) : undefined;
   const longitude = Number.isFinite(input.longitude) ? Number(input.longitude) : undefined;
-  const hasLocation = Boolean(
+  const coordinatesAvailable = Boolean(
     latitude !== undefined &&
     longitude !== undefined &&
     Number.isFinite(latitude) &&
@@ -284,9 +285,12 @@ export const buildChart = (input: {
   );
 
   const exactTime = Boolean(input.birthTime && input.birthTime.trim());
-  const safeTime = exactTime ? input.birthTime! : '12:00';
-  const birthUtcDate = input.timezone && input.timezone.trim() && exactTime
-    ? localBirthToUtc(input.date, safeTime, input.timezone)
+  const timezoneAvailable = Boolean(input.timezone && input.timezone.trim());
+  const needsTimezone = exactTime && coordinatesAvailable && !timezoneAvailable;
+  const hasLocation = coordinatesAvailable && !needsTimezone;
+  const safeTime = exactTime && timezoneAvailable ? input.birthTime! : '12:00';
+  const birthUtcDate = timezoneAvailable && exactTime
+    ? localBirthToUtc(input.date, safeTime, input.timezone!)
     : new Date(Date.UTC(
         Number(input.date.slice(0, 4)),
         Number(input.date.slice(5, 7)) - 1,
@@ -430,6 +434,7 @@ export const buildChart = (input: {
     longitude,
     timezone: input.timezone ?? null,
     hasLocation,
+    needsTimezone,
     lagna,
     lagnaLongitude,
     housePlacements,

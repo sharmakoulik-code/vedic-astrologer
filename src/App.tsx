@@ -47,14 +47,11 @@ function App() {
 
   const handleReset = () => setUserData(null);
   const siteBase = import.meta.env.BASE_URL || '/';
-  const exactTimeWithoutTimezone = Boolean(
-    userData?.birthTime?.trim() && !userData.timezone?.trim(),
-  );
   const chartSummary = userData ? buildChart({
     date: userData.dob,
-    latitude: exactTimeWithoutTimezone ? undefined : userData.latitude,
-    longitude: exactTimeWithoutTimezone ? undefined : userData.longitude,
-    birthTime: exactTimeWithoutTimezone ? undefined : userData.birthTime,
+    latitude: userData.latitude,
+    longitude: userData.longitude,
+    birthTime: userData.birthTime,
     timezone: userData.timezone,
     locationLabel: userData.birthPlace || 'Birth location',
   }) : null;
