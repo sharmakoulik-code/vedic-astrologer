@@ -1,4 +1,4 @@
-import { getSiteBaseUrl } from './site';
+import { getCanonicalUrl } from './site';
 
 const isValidStructuredDataUrl = (value?: string) => {
   if (!value) return false;
@@ -10,39 +10,16 @@ const safeUrl = (value?: string) => {
     return value;
   }
 
-  const base = getSiteBaseUrl();
-  if (!base && !value) {
-    return undefined;
-  }
-
   if (!value) {
-    return base || undefined;
+    return getCanonicalUrl('/');
   }
 
   if (value.startsWith('/')) {
-    return `${base}${value}`;
+    return getCanonicalUrl(value);
   }
 
-  return `${base}/${value}`;
+  return getCanonicalUrl(value);
 };
-
-export const buildOrganizationSchema = () => ({
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'VedicAstrologer',
-  alternateName: 'Vedic Astrologer',
-  url: safeUrl('/'),
-  logo: safeUrl('/og-image.svg'),
-  description:
-    'Vedic astrology platform providing personalized birth chart insights, guidance, and life analysis.',
-  sameAs: [],
-  areaServed: 'Worldwide',
-  contactPoint: {
-    '@type': 'ContactPoint',
-    contactType: 'Customer Support',
-    availableLanguage: ['English'],
-  },
-});
 
 export const buildWebSiteSchema = () => ({
   '@context': 'https://schema.org',
@@ -50,13 +27,8 @@ export const buildWebSiteSchema = () => ({
   name: 'VedicAstrologer',
   url: safeUrl('/'),
   description:
-    'Personalized Vedic astrology readings covering astrology guidance, birth chart analysis, career insights, and life direction.',
+    'Vedic astrology readings based on planetary positions, Lahiri ayanamsa, and whole-sign houses. For guidance and entertainment only.',
   inLanguage: 'en',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: `${safeUrl('/')}?q={search_term_string}`,
-    'query-input': 'required name=search_term_string',
-  },
 });
 
 export const buildWebPageSchema = (pageName = 'Home') => ({
@@ -65,7 +37,7 @@ export const buildWebPageSchema = (pageName = 'Home') => ({
   name: pageName,
   url: safeUrl('/'),
   description:
-    'VedicAstrologer offers Vedic astrology readings, chart guidance, and life analysis rooted in traditional astrologic interpretation.',
+    'Planetary positions are interpreted using Lahiri ayanamsa and whole-sign houses. Readings are for guidance and entertainment only.',
   isPartOf: {
     '@id': safeUrl('/'),
     '@type': 'WebSite',
@@ -79,12 +51,7 @@ export const buildSoftwareApplicationSchema = () => ({
   applicationCategory: 'LifestyleApplication',
   operatingSystem: 'Web',
   description:
-    'An astrology platform that generates personalized Vedic astrology reports based on user birth details.',
-  offers: {
-    '@type': 'Offer',
-    category: 'Astrology Reading',
-    availability: 'https://schema.org/InStock',
-  },
+    'A browser-based Vedic astrology reading using Lahiri ayanamsa and whole-sign houses, for guidance and entertainment.',
   url: safeUrl('/'),
 });
 

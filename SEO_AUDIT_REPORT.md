@@ -1,7 +1,7 @@
 # SEO Audit Report – VedicAstrologer
 
 Date: 2026-11-04
-Status: Phase One completed. No application code was modified during this audit.
+Status: Current implementation summary.
 
 ## 1. Scope and Audit Method
 This audit reviewed the current project structure, Vite configuration, HTML metadata, client-side SEO hooks, robots and sitemap setup, and the app’s single-page architecture.
@@ -29,85 +29,54 @@ The project already includes a meaningful amount of SEO groundwork, including:
 - dynamic meta tag updates through a React hook
 - Vite base configuration for a GitHub Pages-style project path
 
-This means the project is not SEO-empty, but it is not yet fully production-safe or environment-aware.
+The canonical deployment is GitHub Pages at `https://sharmakoulik-code.github.io/vedic-astrologer/`. GitHub Actions deploys pushes to `main`.
 
 ## 3. Current SEO Implementation Review
 
 ### 3.1 Metadata
-Status: Present, but partially hardcoded and not fully environment-aware.
+Status: Configured for the current GitHub Pages URL.
 
 Findings:
-- The root HTML has strong default metadata for title, description, keywords, OG, Twitter, theme-color, language, and robots.
+- The root HTML has title, description, Open Graph, Twitter card, theme-color, and robots metadata.
 - The app also sets metadata dynamically in React through src/config/seo.ts and src/hooks/useMetaTags.ts.
-- The metadata is currently tied to a hardcoded production URL: https://vedic-astrologer.com
-- The app is configured for a GitHub Pages project path in vite.config.ts, but the metadata still assumes a custom production domain.
-- This creates a conflict between GitHub Pages deployment and a custom-domain configuration mindset.
+- `src/seo/site.ts` contains the canonical site base URL.
+- Social previews use a 1200x630 PNG.
 
 Impact:
-- Canonical URLs can point to the wrong host when deployed on GitHub Pages or a local preview.
-- Duplicate or misleading metadata can appear across environments.
+- Canonical and preview URLs use the published GitHub Pages project path.
 
 ### 3.2 Canonical URLs
-Status: Present, but not environment-safe.
+Status: Canonical URLs use the configured GitHub Pages site base.
 
 Findings:
-- Canonical is set in index.html to https://vedic-astrologer.com/
-- The app also sets canonical dynamically via useMetaTags
-- The canonical is not conditional on environment or base URL
-- There is no logic to avoid localhost, preview URLs, or non-production deployments
+- Canonical is set to https://sharmakoulik-code.github.io/vedic-astrologer/
+- The app also sets canonical dynamically via useMetaTags.
 
 Impact:
-- Search engines may see incorrect canonical targets if the app is tested locally or deployed to a project URL.
-- The page may claim an incorrect production identity before the site is ready to be indexed.
+- Canonical targets are set to the published site; static pages use absolute canonical URLs.
 
 ### 3.3 Robots.txt
-Status: Present, but broad and not fully deployment-safe.
+Status: Present.
 
 Findings:
-- public/robots.txt currently allows all bots and allows the entire site.
-- It points to the production sitemap URL at https://vedic-astrologer.com/sitemap.xml
-- This is fine only when the production deployment is actually live.
-- It includes generic “Allow: /” rules and broad bot allowances.
-
-Impact:
-- If the project is still under local development or staging, the public robots file can overexpose indexing assumptions.
-- It does not distinguish between local/dev deployment and production deployment.
+- public/robots.txt allows all user agents and the entire site.
+- It points to https://sharmakoulik-code.github.io/vedic-astrologer/sitemap.xml
 
 ### 3.4 Sitemap
-Status: Present, but not fully aligned to the actual app architecture.
+Status: Present with absolute URLs.
 
 Findings:
-- public/sitemap.xml exists and contains a homepage plus many anchor-based URLs like:
-  - /#birth-chart-overview
-  - /#personality-analysis
-  - /#career-astrology
-  - etc.
-- These URLs are not independent pages in a React SPA and are not proper canonical URLs for crawlable content.
-- The sitemap contains several section-level hash URLs that do not represent unique pages or standalone indexed content.
-- The sitemap is also hardcoded to the production domain with specific dated values.
-
-Impact:
-- Search engines may treat a large number of in-page anchors as separate URLs even though they are not unique pages.
-- This can dilute crawl focus and create low-value sitemap entries.
-- It does not reflect a strong SEO strategy around dedicated informational landing pages.
+- public/sitemap.xml lists the homepage and available static guide pages using the published site base.
 
 ### 3.5 Structured Data
-Status: Present, but generic and partly inaccurate for a product still in development.
+Status: Website and FAQ structured data are provided.
 
 Findings:
-- The HTML contains JSON-LD for Organization, Service, BreadcrumbList, and FAQPage.
-- Some values appear invented or overly assertive, including:
-  - founder details
-  - logo URLs
-  - social URLs
-  - support email addresses
-  - exact social profiles
-  - claim of confidential storage without actual evidence in code review
-- The app’s configuration does not appear to include a verified legal/privacy or contact policy implementation
+- Structured data describes the site and uses FAQ copy aligned with the visible page.
+- Unverified business identity details are not included.
 
 Impact:
-- This can create trust or accuracy issues in search indexing.
-- Fake or unsupported business data may be considered misleading if published without validation.
+- The structured data avoids unsupported organization claims.
 
 ### 3.6 JavaScript Rendering and SEO Accessibility
 Status: Major limitation for search discoverability.

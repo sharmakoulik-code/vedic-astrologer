@@ -378,9 +378,9 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
 
           <motion.div className="mt-6 grid gap-2 sm:grid-cols-3" variants={itemVariants}>
             {[
-              '✓ Private & Secure',
-              '✓ Personalized Insights',
-              '✓ Generated in Seconds',
+              'Lahiri ayanamsa',
+              'Whole-sign houses',
+              'Browser-based report',
             ].map((badge) => (
               <div
                 key={badge}
@@ -395,8 +395,11 @@ export const UserDataForm: React.FC<UserDataFormProps> = ({ onSubmit }) => {
             className="mt-6 text-center text-xs text-white/50 sm:mt-8"
             variants={itemVariants}
           >
-            Birth details are used to generate your report. The entered place text is sent to Open-Meteo for timezone and coordinate lookup.
+            Birth details are processed in your browser. If you search for a birth place, only the place name you enter is sent to Open-Meteo for location lookup.
           </motion.p>
+          <p className="mt-3 text-center text-xs text-white/60">
+            For guidance and entertainment only. Not medical, legal, financial or professional advice.
+          </p>
         </motion.div>
       </motion.div>
     </motion.div>

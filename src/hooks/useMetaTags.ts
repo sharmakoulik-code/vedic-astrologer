@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 interface MetaTagsConfig {
   title?: string;
   description?: string;
-  keywords?: string;
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
@@ -13,8 +12,6 @@ interface MetaTagsConfig {
   twitterTitle?: string;
   twitterDescription?: string;
   twitterImage?: string;
-  twitterSite?: string;
-  twitterCreator?: string;
   themeColor?: string;
   robots?: string;
   canonical?: string;
@@ -46,10 +43,6 @@ export const useMetaTags = (config: MetaTagsConfig) => {
 
     if (config.description) {
       updateMetaTag('description', config.description);
-    }
-
-    if (config.keywords) {
-      updateMetaTag('keywords', config.keywords);
     }
 
     if (config.themeColor) {
@@ -94,14 +87,6 @@ export const useMetaTags = (config: MetaTagsConfig) => {
 
     if (config.twitterImage) {
       updateMetaTag('twitter:image', config.twitterImage);
-    }
-
-    if (config.twitterSite) {
-      updateMetaTag('twitter:site', config.twitterSite);
-    }
-
-    if (config.twitterCreator) {
-      updateMetaTag('twitter:creator', config.twitterCreator);
     }
 
     if (config.canonical) {

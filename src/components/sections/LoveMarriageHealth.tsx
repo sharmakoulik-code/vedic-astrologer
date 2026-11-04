@@ -81,6 +81,9 @@ export const LoveMarriageHealth: React.FC<{ user: UserDetails }> = ({ user }) =>
             </p>
           </div>
         </div>
+        <p className="text-sm text-mystic-300">
+          Health interpretations are for reflection only, not medical advice.
+        </p>
       </section>
     </>
   );

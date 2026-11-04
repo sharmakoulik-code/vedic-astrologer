@@ -39,14 +39,7 @@ npm run build
 
 ## GitHub Pages Deployment
 
-This project is configured for GitHub Pages with Vite's `base` path set to `/vedic-astrologer/`.
-
-To deploy:
-
-1. Push the repository to GitHub.
-2. In the GitHub repository, go to Settings > Pages.
-3. Set Source to GitHub Actions.
-4. Commit and push the workflow file included in `.github/workflows/deploy.yml`.
+The site is published at https://sharmakoulik-code.github.io/vedic-astrologer/ with Vite's `base` path set to `/vedic-astrologer/`. Deployment is handled by GitHub Actions from `main`; pushing to `main` triggers the workflow in `.github/workflows/deploy.yml`.
 
 ## Project Structure
 

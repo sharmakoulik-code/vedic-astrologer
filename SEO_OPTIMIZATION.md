@@ -3,6 +3,8 @@
 ## Overview
 This document outlines all SEO optimizations implemented for the VedicAstrologer platform.
 
+The published site is `https://sharmakoulik-code.github.io/vedic-astrologer/`. Its base URL is defined in `src/seo/site.ts`. GitHub Actions deploys pushes to `main`.
+
 ---
 
 ## 1. Meta Tags & Open Graph
@@ -11,32 +13,27 @@ This document outlines all SEO optimizations implemented for the VedicAstrologer
 - **Charset**: UTF-8
 - **Viewport**: width=device-width, initial-scale=1.0 (mobile-responsive)
 - **Description**: Comprehensive meta description for search results
-- **Keywords**: Targeted Vedic astrology related keywords
-- **Author**: VedicAstrologer
-- **Theme Color**: #1b203a (brand color)
+- **Theme Color**: #141b2d (brand color)
 - **Robots**: index, follow (allows search engine crawling)
 
 ### Open Graph Tags
 - **og:type**: website
-- **og:url**: https://vedic-astrologer.com/
+- **og:url**: https://sharmakoulik-code.github.io/vedic-astrologer/
 - **og:title**: SEO-optimized title for social sharing
 - **og:description**: Compelling description for social media preview
-- **og:image**: 1200x630px image for social sharing
+- **og:image**: PNG image for social sharing at https://sharmakoulik-code.github.io/vedic-astrologer/og-image.png
 - **og:site_name**: VedicAstrologer
 - **og:locale**: en_US
 
 ### Twitter Card Tags
 - **twitter:card**: summary_large_image (rich preview format)
-- **twitter:url**: Site URL
 - **twitter:title**: Optimized title for Twitter
 - **twitter:description**: Twitter-friendly description
 - **twitter:image**: Optimized image for Twitter (1200x630px)
-- **twitter:creator**: @vedic_astrologer
-- **twitter:site**: @vedic_astrologer
+- No unverified account handle is specified.
 
 ### Additional Meta Tags
 - **Canonical URL**: Prevents duplicate content issues
-- **Language Alternate**: hreflang tags for international versions
 - **Apple Touch Icon**: For iOS home screen
 - **Apple Mobile Web App**: Enables standalone mode
 - **DNS Prefetch**: Performance optimization for external resources
@@ -45,50 +42,16 @@ This document outlines all SEO optimizations implemented for the VedicAstrologer
 
 ## 2. Structured Data (JSON-LD)
 
-### Organization Schema
+### Website Schema
 ```json
 {
-  "@context": "https://schema.org/",
-  "@type": "Organization",
+  "@context": "https://schema.org",
+  "@type": "WebSite",
   "name": "VedicAstrologer",
-  "url": "https://vedic-astrologer.com/",
-  "logo": "https://vedic-astrologer.com/logo.png",
-  "description": "AI-powered Vedic astrology platform",
-  "sameAs": [social media URLs],
-  "contactPoint": { email, type }
+  "url": "https://sharmakoulik-code.github.io/vedic-astrologer/",
+  "description": "Planetary positions interpreted with Lahiri ayanamsa and whole-sign houses. For guidance and entertainment only."
 }
 ```
-
-Benefits:
-- Improves Google Knowledge Panel
-- Increases CTR in rich snippets
-- Helps with brand entity recognition
-
-### Service Schema
-```json
-{
-  "@type": "Service",
-  "name": "Vedic Astrology Reading",
-  "provider": { Organization },
-  "areaServed": "Worldwide"
-}
-```
-
-### BreadcrumbList Schema
-```json
-{
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "position": 1, "name": "Home", "item": "url" },
-    { "position": 2, "name": "Section", "item": "url" }
-  ]
-}
-```
-
-Benefits:
-- Breadcrumb navigation in SERPs
-- Better site structure understanding
-- Improved crawlability
 
 ### FAQPage Schema
 ```json
@@ -116,11 +79,9 @@ Benefits:
 **Location**: `/public/sitemap.xml`
 
 ### Sitemap Features:
-- **Homepage**: Priority 1.0, weekly updates
-- **Report Sections**: Priority 0.9-0.8, monthly updates
-- **Image Support**: og-image.jpg included
-- **Change Frequency**: Proper update schedule specified
-- **Last Modified**: Current timestamps
+- **Homepage and static guide pages**: Listed with absolute URLs
+- **Change Frequency**: Included for listed pages
+- **Last Modified**: Included for listed pages
 
 ### Registered In:
 - robots.txt
@@ -128,18 +89,8 @@ Benefits:
 - Bing Webmaster Tools
 
 ### URL Coverage:
-- Birth Chart Overview
-- Personality Analysis
-- Career Astrology
-- Financial Astrology
-- Love & Relationship
-- Marriage Prediction
-- Health Astrology
-- Future Prediction
-- Success Analysis
-- Lucky Factors
-- Remedies
-- Action Plan
+- Homepage
+- Static guide pages under `/seo/`
 
 ---
 
@@ -149,21 +100,15 @@ Benefits:
 
 ### Configuration:
 ```
-User-agent: * (all bots)
+User-agent: *
 Allow: /
 
-Crawl-delay: 1
-Request-rate: 1/1s
-
-Disallow: /admin, /api, /node_modules, /.git
-Sitemap: https://vedic-astrologer.com/sitemap.xml
+Sitemap: https://sharmakoulik-code.github.io/vedic-astrologer/sitemap.xml
 ```
 
 ### Features:
 - Allows search engine crawling
 - Specifies sitemap location
-- Prevents crawling of unnecessary paths
-- Respects bot bandwidth with crawl delays
 
 ---
 
@@ -177,10 +122,8 @@ Sitemap: https://vedic-astrologer.com/sitemap.xml
 - **Theme Color**: #facc15 (gold)
 - **Background Color**: #1b203a (dark)
 - **Icons**: Multiple sizes (192x192, 512x512)
-- **Maskable Icons**: For adaptive icons on modern devices
-- **Screenshots**: For app store-like presentation
-- **Categories**: lifestyle, productivity
-- **Shortcuts**: Quick action to generate reading
+- **Start URL and scope**: `/vedic-astrologer/`
+- **Categories**: lifestyle
 
 ### SEO Benefits:
 - Improves mobile app listing
@@ -190,23 +133,9 @@ Sitemap: https://vedic-astrologer.com/sitemap.xml
 
 ---
 
-## 6. Additional Security Files
+## 6. External Requests
 
-### ads.txt
-**Location**: `/public/ads.txt`
-
-- Prevents unauthorized ad sales
-- Increases advertiser confidence
-- Required by major ad networks
-- Format: Domain, Relationship Type, Certificate ID
-
-### security.txt
-**Location**: `/public/.well-known/security.txt`
-
-- Security contact information
-- Responsible disclosure policy
-- Helps researchers report vulnerabilities
-- RFC 9116 compliant
+Birth-chart calculations run in the browser. The optional birth-place search sends only the entered place name to Open-Meteo.
 
 ---
 
@@ -227,14 +156,13 @@ Located in: `src/hooks/useMetaTags.ts`
 useMetaTags({
   title: 'Page Title',
   description: 'Page description',
-  keywords: 'relevant, keywords',
   ogTitle: 'OG Title',
   ogDescription: 'OG Description',
   ogImage: 'image-url',
   twitterTitle: 'Twitter Title',
   twitterDescription: 'Twitter Description',
   twitterImage: 'twitter-image-url',
-  canonical: 'https://vedic-astrologer.com/'
+  canonical: 'https://sharmakoulik-code.github.io/vedic-astrologer/'
 });
 ```
 
@@ -245,7 +173,7 @@ Located in: `src/config/seo.ts`
 - Base SEO configuration
 - Page-specific meta tags
 - Generate helper function
-- Keyword optimization
+- No keywords meta tag is emitted
 - Title templates
 
 ---
@@ -362,8 +290,6 @@ Located in: `src/config/seo.ts`
 - ✅ Alt text for images
 - ✅ Internal linking structure
 - ✅ Web manifest for PWA
-- ✅ Security.txt file
-- ✅ ads.txt file
 
 ---
 
@@ -434,14 +360,11 @@ project/
 │   ├── robots.txt
 │   ├── sitemap.xml
 │   ├── manifest.json
-│   ├── ads.txt
-│   ├── .well-known/
-│   │   └── security.txt
-│   ├── og-image.jpg (1200x630px)
-│   ├── twitter-image.jpg (1200x630px)
+│   ├── og-image.png (1200x630px)
 │   ├── favicon.ico
 │   ├── apple-touch-icon.png
-│   └── icons/ (PWA icons)
+│   ├── icon-192x192.png
+│   └── icon-512x512.png
 ├── src/
 │   ├── hooks/
 │   │   └── useMetaTags.ts
@@ -455,12 +378,8 @@ project/
 
 ## Implementation Notes
 
-1. **Image Files**: Add actual images for og-image.jpg and twitter-image.jpg
-2. **Domain**: Replace vedic-astrologer.com with actual domain
-3. **Social Media**: Update Twitter handle and social links
-4. **Search Console**: Verify ownership in Google Search Console
-5. **Analytics**: Implement Google Analytics 4
-6. **Content**: Add actual testimonials and case studies
+1. **Social preview**: The repository includes an actual 1200x630 PNG.
+2. **Site URL**: Update the single base URL constant in `src/seo/site.ts` if the site moves
 
 ---
 

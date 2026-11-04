@@ -80,6 +80,9 @@ export const CareerFinance: React.FC<{ user: UserDetails }> = ({ user }) => {
             In practical terms, long-term stability often comes from diversified planning, consistent effort, and a willingness to avoid unnecessary speculation. The best financial strategy is usually the one that matches your actual goals, risk tolerance, and life stage.
           </p>
         </div>
+        <p className="mt-4 text-sm text-mystic-300">
+          Financial interpretations are for reflection only, not financial advice.
+        </p>
       </section>
     </>
   );

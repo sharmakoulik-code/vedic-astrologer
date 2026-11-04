@@ -4,19 +4,20 @@ import { buildChart } from '../../utils/chart';
 import { Compass, Moon, Sun, Star, Wind } from 'lucide-react';
 
 export const BirthChartOverview: React.FC<{ user: UserDetails; chart?: ReturnType<typeof buildChart> }> = ({ user, chart }) => {
+  const hasExactTime = Boolean(user.birthTime && user.birthTime.trim());
+  const missingTimezone = hasExactTime && !user.timezone?.trim();
   const resolvedChart = chart ?? buildChart({
     date: user.dob,
-    latitude: user.latitude,
-    longitude: user.longitude,
-    birthTime: user.birthTime || '12:00',
+    latitude: missingTimezone ? undefined : user.latitude,
+    longitude: missingTimezone ? undefined : user.longitude,
+    birthTime: missingTimezone ? undefined : user.birthTime || '12:00',
     timezone: user.timezone,
     locationLabel: user.birthPlace || 'Birth location',
   });
 
-  const hasExactTime = Boolean(user.birthTime && user.birthTime.trim());
   const displayPlace = user.birthPlace || 'birth place not provided';
   const displayTime = user.birthTime || 'approximate time';
-  const hasLocation = Boolean(resolvedChart.hasLocation);
+  const hasLocation = Boolean(resolvedChart.hasLocation && !missingTimezone);
 
   return (
     <section className="mb-16 scroll-mt-24" id="birth-chart-overview">
@@ -26,7 +27,7 @@ export const BirthChartOverview: React.FC<{ user: UserDetails; chart?: ReturnTyp
       </h2>
 
       <p className="text-premium mb-8">
-        Welcome, <span className="text-yellow-300 font-semibold">{user.name || 'friend'}</span>. Based on your birth details from <span className="text-yellow-200">{displayPlace}</span> on <span className="text-yellow-200">{new Date(user.dob || Date.now()).toLocaleDateString()}</span> at <span className="text-yellow-200">{displayTime}</span>. {hasLocation ? 'The chart below reflects the local birth time and calculated ascendant.' : 'A precise birth place and coordinates are needed for Lagna and house-based timing. Without them, only the planetary and nakshatra positions can be read.'}
+        Welcome, <span className="text-yellow-300 font-semibold">{user.name || 'friend'}</span>. Based on your birth details from <span className="text-yellow-200">{displayPlace}</span> on <span className="text-yellow-200">{new Date(user.dob || Date.now()).toLocaleDateString()}</span> at <span className="text-yellow-200">{displayTime}</span>. {missingTimezone ? 'A timezone is needed to interpret the entered birth time. The time is not used, and Lagna and house placements are omitted.' : hasLocation ? 'The chart below reflects the local birth time and calculated ascendant.' : 'A birth place and coordinates are needed for Lagna and house placements. Without them, only the planetary and nakshatra positions can be read.'}
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
@@ -47,7 +48,7 @@ export const BirthChartOverview: React.FC<{ user: UserDetails; chart?: ReturnTyp
               <Compass className="w-5 h-5 text-yellow-400" /> Ascendant (Lagna)
             </h3>
             <p className="text-premium-muted">
-              {hasLocation ? 'Because the exact birth time is missing, the Lagna remains approximate and is not shown until the precise birth time is supplied.' : 'A precise birth place and coordinates are required before Lagna and house placements are calculated.'}
+              {missingTimezone ? 'Please provide a timezone for your birth place to use the entered birth time and calculate Lagna and house placements.' : hasLocation ? 'Because the birth time is missing, Lagna and house placements are not shown.' : 'A birth place and coordinates are required before Lagna and house placements are calculated.'}
             </p>
           </div>
         )}
@@ -87,6 +88,9 @@ export const BirthChartOverview: React.FC<{ user: UserDetails; chart?: ReturnTyp
         <h3 className="text-2xl font-serif font-bold mb-4 relative z-10 text-yellow-200">Dominant Elements</h3>
         <p className="text-premium relative z-10">
           A quick balance from the chart shows Fire {resolvedChart.elementBalance.Fire}, Earth {resolvedChart.elementBalance.Earth}, Air {resolvedChart.elementBalance.Air}, and Water {resolvedChart.elementBalance.Water}. This balance usually points to how your instinctive energy is distributed between action, stability, thought, and feeling.
+        </p>
+        <p className="mt-4 text-sm text-premium-muted">
+          Planetary positions use Lahiri ayanamsa; whole-sign houses are used when Lagna is available.
         </p>
       </div>
     </section>

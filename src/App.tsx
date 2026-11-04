@@ -17,18 +17,16 @@ import {
   Star,
   ArrowRight,
   CheckCircle2,
-  ShieldCheck,
-  Clock3,
   Quote,
-  Lock,
-  Users,
   WandSparkles,
+  Monitor,
+  MapPin,
+  Calculator,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useMetaTags } from './hooks/useMetaTags';
 import { generateMetaTags } from './config/seo';
 import {
-  buildOrganizationSchema,
   buildSoftwareApplicationSchema,
   buildWebPageSchema,
   buildWebSiteSchema,
@@ -39,7 +37,6 @@ function App() {
   const [userData, setUserData] = useState<UserDetails | null>(null);
 
   useEffect(() => {
-    injectStructuredData(buildOrganizationSchema(), 'vedic-astrologer-organization-schema');
     injectStructuredData(buildWebSiteSchema(), 'vedic-astrologer-website-schema');
     injectStructuredData(buildWebPageSchema('Home'), 'vedic-astrologer-webpage-schema');
     injectStructuredData(buildSoftwareApplicationSchema(), 'vedic-astrologer-app-schema');
@@ -50,11 +47,14 @@ function App() {
 
   const handleReset = () => setUserData(null);
   const siteBase = import.meta.env.BASE_URL || '/';
+  const exactTimeWithoutTimezone = Boolean(
+    userData?.birthTime?.trim() && !userData.timezone?.trim(),
+  );
   const chartSummary = userData ? buildChart({
     date: userData.dob,
-    latitude: userData.latitude,
-    longitude: userData.longitude,
-    birthTime: userData.birthTime,
+    latitude: exactTimeWithoutTimezone ? undefined : userData.latitude,
+    longitude: exactTimeWithoutTimezone ? undefined : userData.longitude,
+    birthTime: exactTimeWithoutTimezone ? undefined : userData.birthTime,
     timezone: userData.timezone,
     locationLabel: userData.birthPlace || 'Birth location',
   }) : null;
@@ -78,14 +78,13 @@ function App() {
 
   const statCards = [
     { value: '12', label: 'Life houses', icon: Moon },
-    { value: '7', label: 'Key life themes', icon: Sparkles },
-    { value: '1:1', label: 'Personal guidance', icon: Star },
+    { value: '9', label: 'Chart bodies', icon: Star },
   ];
 
   const heroBenefits = [
-    'Private & Secure',
-    'Personalized Insights',
-    'Generated in Seconds',
+    'Lahiri ayanamsa',
+    'Whole-sign houses',
+    'Browser-based report',
   ];
 
   const howItWorks = [
@@ -96,13 +95,13 @@ function App() {
     },
     {
       icon: WandSparkles,
-      title: '2. Receive cosmic analysis',
-      text: 'We map key life themes and timing patterns from your chart in a clear, readable format.',
+      title: '2. Review chart themes',
+      text: 'Explore planetary positions and traditional chart themes in a clear, readable format.',
     },
     {
-      icon: ShieldCheck,
-      title: '3. Take aligned action',
-      text: 'Use your guidance for love, money, purpose, health, and long-term direction.',
+      icon: Star,
+      title: '3. Reflect on the reading',
+      text: 'Treat the interpretation as a prompt for reflection, not a prediction or professional advice.',
     },
   ];
 
@@ -114,20 +113,20 @@ function App() {
 
   const faqs = [
     {
-      q: 'How accurate is this reading?',
-      a: 'The reading is designed to offer reflective, personalized insights based on birth data and chart patterns. It can guide self-reflection, but it is not a guarantee of outcomes or a substitute for professional judgment.',
+      q: 'How are charts calculated?',
+      a: 'The chart uses planetary positions interpreted with Lahiri ayanamsa and whole-sign houses. Readings are for guidance and entertainment only, not guaranteed predictions.',
     },
     {
       q: 'Do I need my exact birth time?',
-      a: 'No. You can still generate a meaningful report without a precise birth time or place. The more specific the details, the more personalized the analysis can be.',
+      a: 'A date is enough to show planetary positions. Lagna and house placements need a birth time, location, and timezone. If you enter a time without a timezone, the report will ask for one and omit Lagna.',
     },
     {
-      q: 'Is my information secure?',
-      a: 'Yes. The form is intended for a user experience and the data is handled in a privacy-conscious way. Your details are not exposed in the public report UI.',
+      q: 'What happens to my birth details?',
+      a: 'The report is processed in your browser. If you search for a birth place, only the place name you enter is sent to Open-Meteo for location lookup.',
     },
     {
-      q: 'How long does it take?',
-      a: 'The report is generated instantly once you submit your details, making it easy to view and review on mobile or desktop.',
+      q: 'Is this professional advice?',
+      a: 'No. Readings are for guidance and entertainment only and are not medical, legal, financial, or professional advice.',
     },
   ];
 
@@ -222,7 +221,7 @@ function App() {
                 </h2>
 
                 <p className="mb-6 max-w-xl text-base leading-7 text-white/75 md:text-lg md:leading-8">
-                  Discover your life path through Vedic astrology with a personalized report covering love, career, timing, health, wealth, and remedies.
+                  Explore a Vedic astrology reading based on planetary positions, Lahiri ayanamsa, and whole-sign houses. For guidance and entertainment only.
                 </p>
 
                 <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -247,7 +246,7 @@ function App() {
                   ))}
                 </div>
 
-                <div className="mb-7 grid gap-3 sm:grid-cols-3">
+                <div className="mb-7 grid gap-3 sm:grid-cols-2">
                   {statCards.map(({ value, label, icon: Icon }) => (
                     <div
                       key={label}
@@ -337,25 +336,25 @@ function App() {
 
             <section className="mt-12 md:mt-20">
               <div className="mb-6 text-center md:mb-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-300">Privacy & Security</p>
-                <h3 className="mt-3 text-2xl font-serif font-bold text-white md:text-3xl">Trusted, secure, and respectful</h3>
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-300">Data handling</p>
+                <h3 className="mt-3 text-2xl font-serif font-bold text-white md:text-3xl">What happens in your browser</h3>
               </div>
 
               <div className="grid gap-4 md:grid-cols-3">
                 <div className="glass rounded-2xl p-5 md:p-6">
-                  <Lock className="mb-3 h-5 w-5 text-[#F4C542]" />
-                  <h4 className="mb-2 text-lg font-semibold text-white">Secure input</h4>
-                  <p className="text-sm leading-6 text-slate-300">Your details stay protected and the experience is designed with privacy in mind.</p>
+                  <Monitor className="mb-3 h-5 w-5 text-[#F4C542]" />
+                  <h4 className="mb-2 text-lg font-semibold text-white">Browser-based calculations</h4>
+                  <p className="text-sm leading-6 text-slate-300">Birth details are processed in your browser to produce the chart and reading.</p>
                 </div>
                 <div className="glass rounded-2xl p-5 md:p-6">
-                  <Users className="mb-3 h-5 w-5 text-[#F4C542]" />
-                  <h4 className="mb-2 text-lg font-semibold text-white">Human-first design</h4>
-                  <p className="text-sm leading-6 text-slate-300">We keep the journey clear, personal, and easy to complete on any device.</p>
+                  <MapPin className="mb-3 h-5 w-5 text-[#F4C542]" />
+                  <h4 className="mb-2 text-lg font-semibold text-white">Birth-place search</h4>
+                  <p className="text-sm leading-6 text-slate-300">Only the place name you enter is sent to Open-Meteo for location lookup.</p>
                 </div>
                 <div className="glass rounded-2xl p-5 md:p-6">
-                  <Clock3 className="mb-3 h-5 w-5 text-[#F4C542]" />
-                  <h4 className="mb-2 text-lg font-semibold text-white">Fast experience</h4>
-                  <p className="text-sm leading-6 text-slate-300">Minimal friction, clear hierarchy, and optimized loading keep the page smooth.</p>
+                  <Calculator className="mb-3 h-5 w-5 text-[#F4C542]" />
+                  <h4 className="mb-2 text-lg font-semibold text-white">Chart conventions</h4>
+                  <p className="text-sm leading-6 text-slate-300">Chart calculations use Lahiri ayanamsa and whole-sign houses.</p>
                 </div>
               </div>
             </section>
@@ -365,7 +364,7 @@ function App() {
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-300">Important disclosure</p>
                 <h3 className="mt-3 text-2xl font-serif font-bold text-white md:text-3xl">Astrology as reflection, not certainty</h3>
                 <p className="mt-4 text-sm leading-6 text-slate-300 md:text-base">
-                  This report is presented as a symbolic, reflective tool for self-awareness and personal exploration. It is not a guarantee of outcomes, and it should not be treated as medical, legal, psychological, or financial advice. Birth-chart interpretations are designed to prompt reflection, not replace professional judgment, medical care, or decision-making.
+                  For guidance and entertainment only. Not medical, legal, financial or professional advice.
                 </p>
               </div>
             </section>
@@ -378,7 +377,7 @@ function App() {
 
               <div className="mx-auto max-w-3xl space-y-3">
                 {faqs.map(({ q, a }) => (
-                  <details key={q} className="glass rounded-2xl p-4 md:p-5" open={q === 'How accurate is this reading?'}>
+                  <details key={q} className="glass rounded-2xl p-4 md:p-5" open={q === 'How are charts calculated?'}>
                     <summary className="cursor-pointer list-none text-left text-base font-semibold text-white md:text-lg">{q}</summary>
                     <p className="mt-3 text-sm leading-6 text-slate-300 md:text-base">{a}</p>
                   </details>
@@ -502,6 +501,10 @@ function App() {
               <motion.div variants={itemVariants}>
                 <NumerologyAnalysis user={userData} />
               </motion.div>
+
+              <footer className="border-t border-white/10 pt-6 text-center text-sm text-slate-300">
+                For guidance and entertainment only. Not medical, legal, financial or professional advice.
+              </footer>
             </motion.div>
           </motion.div>
         )}
