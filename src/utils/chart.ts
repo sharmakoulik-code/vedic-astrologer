@@ -1,4 +1,4 @@
-import { Body, Ecliptic, GeoVector } from 'astronomy-engine';
+import { Body, Ecliptic, GeoVector, SiderealTime } from 'astronomy-engine';
 import { localBirthToUtc } from './time';
 
 export type PlanetName = 'Sun' | 'Moon' | 'Mercury' | 'Venus' | 'Mars' | 'Jupiter' | 'Saturn' | 'Rahu' | 'Ketu';
@@ -130,8 +130,7 @@ export const getAscendantLongitude = (date: Date, latitude: number, longitude: n
     return null;
   }
 
-  const gstHours = (date.getUTCHours() + date.getUTCMinutes() / 60 + date.getUTCSeconds() / 3600) / 24;
-  const gmstDegrees = normalizeDegrees((gstHours * 360) + 99.690983 + 360.98564736629 * (getJulianDate(date) - 2451545.0) / 36525);
+  const gmstDegrees = normalizeDegrees(SiderealTime(date) * 15);
   const lstDegrees = normalizeDegrees(gmstDegrees + longitude);
   const epsilon = degreesToRadians(getTrueObliquity(date));
   const latRad = degreesToRadians(latitude);
