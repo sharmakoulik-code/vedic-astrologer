@@ -1,0 +1,1776 @@
+{
+  "generatedBy": "pyswisseph (Lahiri, sidereal, Moshier, mean node)",
+  "source": "scripts/gen-fixtures.py",
+  "cases": [
+    {
+      "at": "1990-01-15T12:00:00Z",
+      "planets": {
+        "Sun": {
+          "longitude": 271.3567936211668,
+          "sign": "Capricorn",
+          "nakshatraIndex": 20,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Moon": {
+          "longitude": 143.77937811778665,
+          "sign": "Leo",
+          "nakshatraIndex": 10,
+          "pada": 4,
+          "retrograde": false
+        },
+        "Mercury": {
+          "longitude": 257.62283637084107,
+          "sign": "Sagittarius",
+          "nakshatraIndex": 19,
+          "pada": 2,
+          "retrograde": true
+        },
+        "Venus": {
+          "longitude": 276.96414540044316,
+          "sign": "Capricorn",
+          "nakshatraIndex": 20,
+          "pada": 4,
+          "retrograde": true
+        },
+        "Mars": {
+          "longitude": 236.18763696929844,
+          "sign": "Scorpio",
+          "nakshatraIndex": 17,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Jupiter": {
+          "longitude": 69.64453445428428,
+          "sign": "Gemini",
+          "nakshatraIndex": 5,
+          "pada": 1,
+          "retrograde": true
+        },
+        "Saturn": {
+          "longitude": 263.59305122434034,
+          "sign": "Sagittarius",
+          "nakshatraIndex": 19,
+          "pada": 4,
+          "retrograde": false
+        },
+        "Rahu": {
+          "longitude": 293.97238152818926,
+          "sign": "Capricorn",
+          "nakshatraIndex": 22,
+          "pada": 1,
+          "retrograde": true
+        },
+        "Ketu": {
+          "longitude": 113.97238152818926,
+          "sign": "Cancer",
+          "nakshatraIndex": 8,
+          "pada": 3,
+          "retrograde": true
+        }
+      },
+      "natalReferences": {
+        "Aries-0": {
+          "houses": {
+            "Sun": 10,
+            "Moon": 5,
+            "Mercury": 9,
+            "Venus": 10,
+            "Mars": 8,
+            "Jupiter": 3,
+            "Saturn": 9,
+            "Rahu": 10,
+            "Ketu": 4
+          },
+          "taraBala": {
+            "count": 11,
+            "tara": 2,
+            "name": "Sampat",
+            "nakshatraIndex": 10
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Libra-12": {
+          "houses": {
+            "Sun": 4,
+            "Moon": 11,
+            "Mercury": 3,
+            "Venus": 4,
+            "Mars": 2,
+            "Jupiter": 9,
+            "Saturn": 3,
+            "Rahu": 4,
+            "Ketu": 10
+          },
+          "taraBala": {
+            "count": 26,
+            "tara": 8,
+            "name": "Mitra",
+            "nakshatraIndex": 10
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Pisces-26": {
+          "houses": {
+            "Sun": 11,
+            "Moon": 6,
+            "Mercury": 10,
+            "Venus": 11,
+            "Mars": 9,
+            "Jupiter": 4,
+            "Saturn": 10,
+            "Rahu": 11,
+            "Ketu": 5
+          },
+          "taraBala": {
+            "count": 12,
+            "tara": 3,
+            "name": "Vipat",
+            "nakshatraIndex": 10
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        }
+      }
+    },
+    {
+      "at": "1993-07-22T00:00:00Z",
+      "planets": {
+        "Sun": {
+          "longitude": 95.4382837766247,
+          "sign": "Cancer",
+          "nakshatraIndex": 7,
+          "pada": 1,
+          "retrograde": false
+        },
+        "Moon": {
+          "longitude": 129.6486492268023,
+          "sign": "Leo",
+          "nakshatraIndex": 9,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Mercury": {
+          "longitude": 85.05919202252622,
+          "sign": "Gemini",
+          "nakshatraIndex": 6,
+          "pada": 2,
+          "retrograde": true
+        },
+        "Venus": {
+          "longitude": 53.82944017178064,
+          "sign": "Taurus",
+          "nakshatraIndex": 4,
+          "pada": 1,
+          "retrograde": false
+        },
+        "Mars": {
+          "longitude": 143.21297454374448,
+          "sign": "Leo",
+          "nakshatraIndex": 10,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Jupiter": {
+          "longitude": 164.57255423337614,
+          "sign": "Virgo",
+          "nakshatraIndex": 12,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Saturn": {
+          "longitude": 305.21599332381106,
+          "sign": "Aquarius",
+          "nakshatraIndex": 22,
+          "pada": 4,
+          "retrograde": true
+        },
+        "Rahu": {
+          "longitude": 225.95712350764873,
+          "sign": "Scorpio",
+          "nakshatraIndex": 16,
+          "pada": 4,
+          "retrograde": true
+        },
+        "Ketu": {
+          "longitude": 45.9571235076487,
+          "sign": "Taurus",
+          "nakshatraIndex": 3,
+          "pada": 2,
+          "retrograde": true
+        }
+      },
+      "natalReferences": {
+        "Aries-0": {
+          "houses": {
+            "Sun": 4,
+            "Moon": 5,
+            "Mercury": 3,
+            "Venus": 2,
+            "Mars": 5,
+            "Jupiter": 6,
+            "Saturn": 11,
+            "Rahu": 8,
+            "Ketu": 2
+          },
+          "taraBala": {
+            "count": 10,
+            "tara": 1,
+            "name": "Janma",
+            "nakshatraIndex": 9
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Libra-12": {
+          "houses": {
+            "Sun": 10,
+            "Moon": 11,
+            "Mercury": 9,
+            "Venus": 8,
+            "Mars": 11,
+            "Jupiter": 12,
+            "Saturn": 5,
+            "Rahu": 2,
+            "Ketu": 8
+          },
+          "taraBala": {
+            "count": 25,
+            "tara": 7,
+            "name": "Vadha",
+            "nakshatraIndex": 9
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Pisces-26": {
+          "houses": {
+            "Sun": 5,
+            "Moon": 6,
+            "Mercury": 4,
+            "Venus": 3,
+            "Mars": 6,
+            "Jupiter": 7,
+            "Saturn": 12,
+            "Rahu": 9,
+            "Ketu": 3
+          },
+          "taraBala": {
+            "count": 11,
+            "tara": 2,
+            "name": "Sampat",
+            "nakshatraIndex": 9
+          },
+          "sadeSati": {
+            "active": true,
+            "phase": "rising"
+          }
+        }
+      }
+    },
+    {
+      "at": "1998-11-03T18:30:00Z",
+      "planets": {
+        "Sun": {
+          "longitude": 197.29357835078687,
+          "sign": "Libra",
+          "nakshatraIndex": 14,
+          "pada": 4,
+          "retrograde": false
+        },
+        "Moon": {
+          "longitude": 10.828143744622723,
+          "sign": "Aries",
+          "nakshatraIndex": 0,
+          "pada": 4,
+          "retrograde": false
+        },
+        "Mercury": {
+          "longitude": 218.89340763884536,
+          "sign": "Scorpio",
+          "nakshatraIndex": 16,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Venus": {
+          "longitude": 198.4578392463642,
+          "sign": "Libra",
+          "nakshatraIndex": 14,
+          "pada": 4,
+          "retrograde": false
+        },
+        "Mars": {
+          "longitude": 142.5406929988925,
+          "sign": "Leo",
+          "nakshatraIndex": 10,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Jupiter": {
+          "longitude": 324.48654086563215,
+          "sign": "Aquarius",
+          "nakshatraIndex": 24,
+          "pada": 2,
+          "retrograde": true
+        },
+        "Saturn": {
+          "longitude": 5.453157388254601,
+          "sign": "Aries",
+          "nakshatraIndex": 0,
+          "pada": 2,
+          "retrograde": true
+        },
+        "Rahu": {
+          "longitude": 123.6416847532822,
+          "sign": "Leo",
+          "nakshatraIndex": 9,
+          "pada": 2,
+          "retrograde": true
+        },
+        "Ketu": {
+          "longitude": 303.6416847532822,
+          "sign": "Aquarius",
+          "nakshatraIndex": 22,
+          "pada": 4,
+          "retrograde": true
+        }
+      },
+      "natalReferences": {
+        "Aries-0": {
+          "houses": {
+            "Sun": 7,
+            "Moon": 1,
+            "Mercury": 8,
+            "Venus": 7,
+            "Mars": 5,
+            "Jupiter": 11,
+            "Saturn": 1,
+            "Rahu": 5,
+            "Ketu": 11
+          },
+          "taraBala": {
+            "count": 1,
+            "tara": 1,
+            "name": "Janma",
+            "nakshatraIndex": 0
+          },
+          "sadeSati": {
+            "active": true,
+            "phase": "peak"
+          }
+        },
+        "Libra-12": {
+          "houses": {
+            "Sun": 1,
+            "Moon": 7,
+            "Mercury": 2,
+            "Venus": 1,
+            "Mars": 11,
+            "Jupiter": 5,
+            "Saturn": 7,
+            "Rahu": 11,
+            "Ketu": 5
+          },
+          "taraBala": {
+            "count": 16,
+            "tara": 7,
+            "name": "Vadha",
+            "nakshatraIndex": 0
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Pisces-26": {
+          "houses": {
+            "Sun": 8,
+            "Moon": 2,
+            "Mercury": 9,
+            "Venus": 8,
+            "Mars": 6,
+            "Jupiter": 12,
+            "Saturn": 2,
+            "Rahu": 6,
+            "Ketu": 12
+          },
+          "taraBala": {
+            "count": 2,
+            "tara": 2,
+            "name": "Sampat",
+            "nakshatraIndex": 0
+          },
+          "sadeSati": {
+            "active": true,
+            "phase": "setting"
+          }
+        }
+      }
+    },
+    {
+      "at": "2001-04-09T06:15:00Z",
+      "planets": {
+        "Sun": {
+          "longitude": 355.5889311456308,
+          "sign": "Pisces",
+          "nakshatraIndex": 26,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Moon": {
+          "longitude": 190.3541751156695,
+          "sign": "Libra",
+          "nakshatraIndex": 14,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Mercury": {
+          "longitude": 341.3895747001082,
+          "sign": "Pisces",
+          "nakshatraIndex": 25,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Venus": {
+          "longitude": 339.99818465504313,
+          "sign": "Pisces",
+          "nakshatraIndex": 25,
+          "pada": 2,
+          "retrograde": true
+        },
+        "Mars": {
+          "longitude": 239.60798386589386,
+          "sign": "Scorpio",
+          "nakshatraIndex": 17,
+          "pada": 4,
+          "retrograde": false
+        },
+        "Jupiter": {
+          "longitude": 45.24483165315437,
+          "sign": "Taurus",
+          "nakshatraIndex": 3,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Saturn": {
+          "longitude": 34.79308651760347,
+          "sign": "Taurus",
+          "nakshatraIndex": 2,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Rahu": {
+          "longitude": 76.61182653343896,
+          "sign": "Gemini",
+          "nakshatraIndex": 5,
+          "pada": 3,
+          "retrograde": true
+        },
+        "Ketu": {
+          "longitude": 256.61182653343894,
+          "sign": "Sagittarius",
+          "nakshatraIndex": 19,
+          "pada": 1,
+          "retrograde": true
+        }
+      },
+      "natalReferences": {
+        "Aries-0": {
+          "houses": {
+            "Sun": 12,
+            "Moon": 7,
+            "Mercury": 12,
+            "Venus": 12,
+            "Mars": 8,
+            "Jupiter": 2,
+            "Saturn": 2,
+            "Rahu": 3,
+            "Ketu": 9
+          },
+          "taraBala": {
+            "count": 15,
+            "tara": 6,
+            "name": "Sadhaka",
+            "nakshatraIndex": 14
+          },
+          "sadeSati": {
+            "active": true,
+            "phase": "setting"
+          }
+        },
+        "Libra-12": {
+          "houses": {
+            "Sun": 6,
+            "Moon": 1,
+            "Mercury": 6,
+            "Venus": 6,
+            "Mars": 2,
+            "Jupiter": 8,
+            "Saturn": 8,
+            "Rahu": 9,
+            "Ketu": 3
+          },
+          "taraBala": {
+            "count": 3,
+            "tara": 3,
+            "name": "Vipat",
+            "nakshatraIndex": 14
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Pisces-26": {
+          "houses": {
+            "Sun": 1,
+            "Moon": 8,
+            "Mercury": 1,
+            "Venus": 1,
+            "Mars": 9,
+            "Jupiter": 3,
+            "Saturn": 3,
+            "Rahu": 4,
+            "Ketu": 10
+          },
+          "taraBala": {
+            "count": 16,
+            "tara": 7,
+            "name": "Vadha",
+            "nakshatraIndex": 14
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        }
+      }
+    },
+    {
+      "at": "2005-09-17T21:45:00Z",
+      "planets": {
+        "Sun": {
+          "longitude": 151.15335661556588,
+          "sign": "Virgo",
+          "nakshatraIndex": 11,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Moon": {
+          "longitude": 328.693794258119,
+          "sign": "Aquarius",
+          "nakshatraIndex": 24,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Mercury": {
+          "longitude": 150.97650190601388,
+          "sign": "Virgo",
+          "nakshatraIndex": 11,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Venus": {
+          "longitude": 193.26182634309163,
+          "sign": "Libra",
+          "nakshatraIndex": 14,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Mars": {
+          "longitude": 28.03477819400635,
+          "sign": "Aries",
+          "nakshatraIndex": 2,
+          "pada": 1,
+          "retrograde": false
+        },
+        "Jupiter": {
+          "longitude": 177.9026898445381,
+          "sign": "Virgo",
+          "nakshatraIndex": 13,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Saturn": {
+          "longitude": 103.73471031470942,
+          "sign": "Cancer",
+          "nakshatraIndex": 7,
+          "pada": 4,
+          "retrograde": false
+        },
+        "Rahu": {
+          "longitude": 350.62456568774496,
+          "sign": "Pisces",
+          "nakshatraIndex": 26,
+          "pada": 2,
+          "retrograde": true
+        },
+        "Ketu": {
+          "longitude": 170.62456568774496,
+          "sign": "Virgo",
+          "nakshatraIndex": 12,
+          "pada": 4,
+          "retrograde": true
+        }
+      },
+      "natalReferences": {
+        "Aries-0": {
+          "houses": {
+            "Sun": 6,
+            "Moon": 11,
+            "Mercury": 6,
+            "Venus": 7,
+            "Mars": 1,
+            "Jupiter": 6,
+            "Saturn": 4,
+            "Rahu": 12,
+            "Ketu": 6
+          },
+          "taraBala": {
+            "count": 25,
+            "tara": 7,
+            "name": "Vadha",
+            "nakshatraIndex": 24
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Libra-12": {
+          "houses": {
+            "Sun": 12,
+            "Moon": 5,
+            "Mercury": 12,
+            "Venus": 1,
+            "Mars": 7,
+            "Jupiter": 12,
+            "Saturn": 10,
+            "Rahu": 6,
+            "Ketu": 12
+          },
+          "taraBala": {
+            "count": 13,
+            "tara": 4,
+            "name": "Kshema",
+            "nakshatraIndex": 24
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Pisces-26": {
+          "houses": {
+            "Sun": 7,
+            "Moon": 12,
+            "Mercury": 7,
+            "Venus": 8,
+            "Mars": 2,
+            "Jupiter": 7,
+            "Saturn": 5,
+            "Rahu": 1,
+            "Ketu": 7
+          },
+          "taraBala": {
+            "count": 26,
+            "tara": 8,
+            "name": "Mitra",
+            "nakshatraIndex": 24
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        }
+      }
+    },
+    {
+      "at": "2010-02-11T09:30:00Z",
+      "planets": {
+        "Sun": {
+          "longitude": 298.54009669686474,
+          "sign": "Capricorn",
+          "nakshatraIndex": 22,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Moon": {
+          "longitude": 269.16652281539297,
+          "sign": "Sagittarius",
+          "nakshatraIndex": 20,
+          "pada": 1,
+          "retrograde": false
+        },
+        "Mercury": {
+          "longitude": 277.4375877223455,
+          "sign": "Capricorn",
+          "nakshatraIndex": 20,
+          "pada": 4,
+          "retrograde": false
+        },
+        "Venus": {
+          "longitude": 305.85773021095923,
+          "sign": "Aquarius",
+          "nakshatraIndex": 22,
+          "pada": 4,
+          "retrograde": false
+        },
+        "Mars": {
+          "longitude": 101.04616673143977,
+          "sign": "Cancer",
+          "nakshatraIndex": 7,
+          "pada": 3,
+          "retrograde": true
+        },
+        "Jupiter": {
+          "longitude": 311.62798629789427,
+          "sign": "Aquarius",
+          "nakshatraIndex": 23,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Saturn": {
+          "longitude": 159.92541674285397,
+          "sign": "Virgo",
+          "nakshatraIndex": 11,
+          "pada": 4,
+          "retrograde": true
+        },
+        "Rahu": {
+          "longitude": 265.44047141299507,
+          "sign": "Sagittarius",
+          "nakshatraIndex": 19,
+          "pada": 4,
+          "retrograde": true
+        },
+        "Ketu": {
+          "longitude": 85.44047141299507,
+          "sign": "Gemini",
+          "nakshatraIndex": 6,
+          "pada": 2,
+          "retrograde": true
+        }
+      },
+      "natalReferences": {
+        "Aries-0": {
+          "houses": {
+            "Sun": 10,
+            "Moon": 9,
+            "Mercury": 10,
+            "Venus": 11,
+            "Mars": 4,
+            "Jupiter": 11,
+            "Saturn": 6,
+            "Rahu": 9,
+            "Ketu": 3
+          },
+          "taraBala": {
+            "count": 21,
+            "tara": 3,
+            "name": "Vipat",
+            "nakshatraIndex": 20
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Libra-12": {
+          "houses": {
+            "Sun": 4,
+            "Moon": 3,
+            "Mercury": 4,
+            "Venus": 5,
+            "Mars": 10,
+            "Jupiter": 5,
+            "Saturn": 12,
+            "Rahu": 3,
+            "Ketu": 9
+          },
+          "taraBala": {
+            "count": 9,
+            "tara": 9,
+            "name": "Ati-Mitra",
+            "nakshatraIndex": 20
+          },
+          "sadeSati": {
+            "active": true,
+            "phase": "rising"
+          }
+        },
+        "Pisces-26": {
+          "houses": {
+            "Sun": 11,
+            "Moon": 10,
+            "Mercury": 11,
+            "Venus": 12,
+            "Mars": 5,
+            "Jupiter": 12,
+            "Saturn": 7,
+            "Rahu": 10,
+            "Ketu": 4
+          },
+          "taraBala": {
+            "count": 22,
+            "tara": 4,
+            "name": "Kshema",
+            "nakshatraIndex": 20
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        }
+      }
+    },
+    {
+      "at": "2014-12-28T15:00:00Z",
+      "planets": {
+        "Sun": {
+          "longitude": 252.7234247861661,
+          "sign": "Sagittarius",
+          "nakshatraIndex": 18,
+          "pada": 4,
+          "retrograde": false
+        },
+        "Moon": {
+          "longitude": 340.83084583496685,
+          "sign": "Pisces",
+          "nakshatraIndex": 25,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Mercury": {
+          "longitude": 264.20532527657406,
+          "sign": "Sagittarius",
+          "nakshatraIndex": 19,
+          "pada": 4,
+          "retrograde": false
+        },
+        "Venus": {
+          "longitude": 268.42435010711455,
+          "sign": "Sagittarius",
+          "nakshatraIndex": 20,
+          "pada": 1,
+          "retrograde": false
+        },
+        "Mars": {
+          "longitude": 294.3412973269029,
+          "sign": "Capricorn",
+          "nakshatraIndex": 22,
+          "pada": 1,
+          "retrograde": false
+        },
+        "Jupiter": {
+          "longitude": 117.92231141166599,
+          "sign": "Cancer",
+          "nakshatraIndex": 8,
+          "pada": 4,
+          "retrograde": true
+        },
+        "Saturn": {
+          "longitude": 216.45302120087146,
+          "sign": "Scorpio",
+          "nakshatraIndex": 16,
+          "pada": 1,
+          "retrograde": false
+        },
+        "Rahu": {
+          "longitude": 171.04957639226254,
+          "sign": "Virgo",
+          "nakshatraIndex": 12,
+          "pada": 4,
+          "retrograde": true
+        },
+        "Ketu": {
+          "longitude": 351.04957639226257,
+          "sign": "Pisces",
+          "nakshatraIndex": 26,
+          "pada": 2,
+          "retrograde": true
+        }
+      },
+      "natalReferences": {
+        "Aries-0": {
+          "houses": {
+            "Sun": 9,
+            "Moon": 12,
+            "Mercury": 9,
+            "Venus": 9,
+            "Mars": 10,
+            "Jupiter": 4,
+            "Saturn": 8,
+            "Rahu": 6,
+            "Ketu": 12
+          },
+          "taraBala": {
+            "count": 26,
+            "tara": 8,
+            "name": "Mitra",
+            "nakshatraIndex": 25
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Libra-12": {
+          "houses": {
+            "Sun": 3,
+            "Moon": 6,
+            "Mercury": 3,
+            "Venus": 3,
+            "Mars": 4,
+            "Jupiter": 10,
+            "Saturn": 2,
+            "Rahu": 12,
+            "Ketu": 6
+          },
+          "taraBala": {
+            "count": 14,
+            "tara": 5,
+            "name": "Pratyak",
+            "nakshatraIndex": 25
+          },
+          "sadeSati": {
+            "active": true,
+            "phase": "setting"
+          }
+        },
+        "Pisces-26": {
+          "houses": {
+            "Sun": 10,
+            "Moon": 1,
+            "Mercury": 10,
+            "Venus": 10,
+            "Mars": 11,
+            "Jupiter": 5,
+            "Saturn": 9,
+            "Rahu": 7,
+            "Ketu": 1
+          },
+          "taraBala": {
+            "count": 27,
+            "tara": 9,
+            "name": "Ati-Mitra",
+            "nakshatraIndex": 25
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        }
+      }
+    },
+    {
+      "at": "2019-05-06T03:45:00Z",
+      "planets": {
+        "Sun": {
+          "longitude": 21.22905760772797,
+          "sign": "Aries",
+          "nakshatraIndex": 1,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Moon": {
+          "longitude": 35.923774414504194,
+          "sign": "Taurus",
+          "nakshatraIndex": 2,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Mercury": {
+          "longitude": 4.759456202706055,
+          "sign": "Aries",
+          "nakshatraIndex": 0,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Venus": {
+          "longitude": 354.64666377156345,
+          "sign": "Pisces",
+          "nakshatraIndex": 26,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Mars": {
+          "longitude": 59.414555090412335,
+          "sign": "Taurus",
+          "nakshatraIndex": 4,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Jupiter": {
+          "longitude": 239.2392709201358,
+          "sign": "Scorpio",
+          "nakshatraIndex": 17,
+          "pada": 4,
+          "retrograde": true
+        },
+        "Saturn": {
+          "longitude": 266.36582346795177,
+          "sign": "Sagittarius",
+          "nakshatraIndex": 19,
+          "pada": 4,
+          "retrograde": true
+        },
+        "Rahu": {
+          "longitude": 86.81714419112511,
+          "sign": "Gemini",
+          "nakshatraIndex": 6,
+          "pada": 3,
+          "retrograde": true
+        },
+        "Ketu": {
+          "longitude": 266.8171441911251,
+          "sign": "Sagittarius",
+          "nakshatraIndex": 20,
+          "pada": 1,
+          "retrograde": true
+        }
+      },
+      "natalReferences": {
+        "Aries-0": {
+          "houses": {
+            "Sun": 1,
+            "Moon": 2,
+            "Mercury": 1,
+            "Venus": 12,
+            "Mars": 2,
+            "Jupiter": 8,
+            "Saturn": 9,
+            "Rahu": 3,
+            "Ketu": 9
+          },
+          "taraBala": {
+            "count": 3,
+            "tara": 3,
+            "name": "Vipat",
+            "nakshatraIndex": 2
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Libra-12": {
+          "houses": {
+            "Sun": 7,
+            "Moon": 8,
+            "Mercury": 7,
+            "Venus": 6,
+            "Mars": 8,
+            "Jupiter": 2,
+            "Saturn": 3,
+            "Rahu": 9,
+            "Ketu": 3
+          },
+          "taraBala": {
+            "count": 18,
+            "tara": 9,
+            "name": "Ati-Mitra",
+            "nakshatraIndex": 2
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Pisces-26": {
+          "houses": {
+            "Sun": 2,
+            "Moon": 3,
+            "Mercury": 2,
+            "Venus": 1,
+            "Mars": 3,
+            "Jupiter": 9,
+            "Saturn": 10,
+            "Rahu": 4,
+            "Ketu": 10
+          },
+          "taraBala": {
+            "count": 4,
+            "tara": 4,
+            "name": "Kshema",
+            "nakshatraIndex": 2
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        }
+      }
+    },
+    {
+      "at": "2024-01-15T12:00:00Z",
+      "planets": {
+        "Sun": {
+          "longitude": 270.62704408962117,
+          "sign": "Capricorn",
+          "nakshatraIndex": 20,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Moon": {
+          "longitude": 325.7001520153064,
+          "sign": "Aquarius",
+          "nakshatraIndex": 24,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Mercury": {
+          "longitude": 247.34236946508372,
+          "sign": "Sagittarius",
+          "nakshatraIndex": 18,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Venus": {
+          "longitude": 236.1408069916921,
+          "sign": "Scorpio",
+          "nakshatraIndex": 17,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Mars": {
+          "longitude": 253.9450853121082,
+          "sign": "Sagittarius",
+          "nakshatraIndex": 19,
+          "pada": 1,
+          "retrograde": false
+        },
+        "Jupiter": {
+          "longitude": 11.796843381076924,
+          "sign": "Aries",
+          "nakshatraIndex": 0,
+          "pada": 4,
+          "retrograde": false
+        },
+        "Saturn": {
+          "longitude": 310.44564432967934,
+          "sign": "Aquarius",
+          "nakshatraIndex": 23,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Rahu": {
+          "longitude": 355.9176653117002,
+          "sign": "Pisces",
+          "nakshatraIndex": 26,
+          "pada": 3,
+          "retrograde": true
+        },
+        "Ketu": {
+          "longitude": 175.91766531170015,
+          "sign": "Virgo",
+          "nakshatraIndex": 13,
+          "pada": 1,
+          "retrograde": true
+        }
+      },
+      "natalReferences": {
+        "Aries-0": {
+          "houses": {
+            "Sun": 10,
+            "Moon": 11,
+            "Mercury": 9,
+            "Venus": 8,
+            "Mars": 9,
+            "Jupiter": 1,
+            "Saturn": 11,
+            "Rahu": 12,
+            "Ketu": 6
+          },
+          "taraBala": {
+            "count": 25,
+            "tara": 7,
+            "name": "Vadha",
+            "nakshatraIndex": 24
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Libra-12": {
+          "houses": {
+            "Sun": 4,
+            "Moon": 5,
+            "Mercury": 3,
+            "Venus": 2,
+            "Mars": 3,
+            "Jupiter": 7,
+            "Saturn": 5,
+            "Rahu": 6,
+            "Ketu": 12
+          },
+          "taraBala": {
+            "count": 13,
+            "tara": 4,
+            "name": "Kshema",
+            "nakshatraIndex": 24
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Pisces-26": {
+          "houses": {
+            "Sun": 11,
+            "Moon": 12,
+            "Mercury": 10,
+            "Venus": 9,
+            "Mars": 10,
+            "Jupiter": 2,
+            "Saturn": 12,
+            "Rahu": 1,
+            "Ketu": 7
+          },
+          "taraBala": {
+            "count": 26,
+            "tara": 8,
+            "name": "Mitra",
+            "nakshatraIndex": 24
+          },
+          "sadeSati": {
+            "active": true,
+            "phase": "rising"
+          }
+        }
+      }
+    },
+    {
+      "at": "2028-08-19T20:15:00Z",
+      "planets": {
+        "Sun": {
+          "longitude": 123.09807444938428,
+          "sign": "Leo",
+          "nakshatraIndex": 9,
+          "pada": 1,
+          "retrograde": false
+        },
+        "Moon": {
+          "longitude": 114.57909128392485,
+          "sign": "Cancer",
+          "nakshatraIndex": 8,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Mercury": {
+          "longitude": 144.90987259218045,
+          "sign": "Leo",
+          "nakshatraIndex": 10,
+          "pada": 4,
+          "retrograde": false
+        },
+        "Venus": {
+          "longitude": 77.64676015966177,
+          "sign": "Gemini",
+          "nakshatraIndex": 5,
+          "pada": 4,
+          "retrograde": false
+        },
+        "Mars": {
+          "longitude": 85.62604423817031,
+          "sign": "Gemini",
+          "nakshatraIndex": 6,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Jupiter": {
+          "longitude": 154.86415393127774,
+          "sign": "Virgo",
+          "nakshatraIndex": 11,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Saturn": {
+          "longitude": 17.043234881942357,
+          "sign": "Aries",
+          "nakshatraIndex": 1,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Rahu": {
+          "longitude": 266.97889757903044,
+          "sign": "Sagittarius",
+          "nakshatraIndex": 20,
+          "pada": 1,
+          "retrograde": true
+        },
+        "Ketu": {
+          "longitude": 86.97889757903044,
+          "sign": "Gemini",
+          "nakshatraIndex": 6,
+          "pada": 3,
+          "retrograde": true
+        }
+      },
+      "natalReferences": {
+        "Aries-0": {
+          "houses": {
+            "Sun": 5,
+            "Moon": 4,
+            "Mercury": 5,
+            "Venus": 3,
+            "Mars": 3,
+            "Jupiter": 6,
+            "Saturn": 1,
+            "Rahu": 9,
+            "Ketu": 3
+          },
+          "taraBala": {
+            "count": 9,
+            "tara": 9,
+            "name": "Ati-Mitra",
+            "nakshatraIndex": 8
+          },
+          "sadeSati": {
+            "active": true,
+            "phase": "peak"
+          }
+        },
+        "Libra-12": {
+          "houses": {
+            "Sun": 11,
+            "Moon": 10,
+            "Mercury": 11,
+            "Venus": 9,
+            "Mars": 9,
+            "Jupiter": 12,
+            "Saturn": 7,
+            "Rahu": 3,
+            "Ketu": 9
+          },
+          "taraBala": {
+            "count": 24,
+            "tara": 6,
+            "name": "Sadhaka",
+            "nakshatraIndex": 8
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Pisces-26": {
+          "houses": {
+            "Sun": 6,
+            "Moon": 5,
+            "Mercury": 6,
+            "Venus": 4,
+            "Mars": 4,
+            "Jupiter": 7,
+            "Saturn": 2,
+            "Rahu": 10,
+            "Ketu": 4
+          },
+          "taraBala": {
+            "count": 10,
+            "tara": 1,
+            "name": "Janma",
+            "nakshatraIndex": 8
+          },
+          "sadeSati": {
+            "active": true,
+            "phase": "setting"
+          }
+        }
+      }
+    },
+    {
+      "at": "2031-03-02T07:30:00Z",
+      "planets": {
+        "Sun": {
+          "longitude": 317.221350907091,
+          "sign": "Aquarius",
+          "nakshatraIndex": 23,
+          "pada": 4,
+          "retrograde": false
+        },
+        "Moon": {
+          "longitude": 59.6007326680171,
+          "sign": "Taurus",
+          "nakshatraIndex": 4,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Mercury": {
+          "longitude": 325.74414485576386,
+          "sign": "Aquarius",
+          "nakshatraIndex": 24,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Venus": {
+          "longitude": 348.56841874789177,
+          "sign": "Pisces",
+          "nakshatraIndex": 26,
+          "pada": 1,
+          "retrograde": false
+        },
+        "Mars": {
+          "longitude": 203.49526219519907,
+          "sign": "Libra",
+          "nakshatraIndex": 15,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Jupiter": {
+          "longitude": 241.7933565771258,
+          "sign": "Sagittarius",
+          "nakshatraIndex": 18,
+          "pada": 1,
+          "retrograde": false
+        },
+        "Saturn": {
+          "longitude": 38.435218375936635,
+          "sign": "Taurus",
+          "nakshatraIndex": 2,
+          "pada": 4,
+          "retrograde": false
+        },
+        "Rahu": {
+          "longitude": 217.98946570911158,
+          "sign": "Scorpio",
+          "nakshatraIndex": 16,
+          "pada": 2,
+          "retrograde": true
+        },
+        "Ketu": {
+          "longitude": 37.989465709111585,
+          "sign": "Taurus",
+          "nakshatraIndex": 2,
+          "pada": 4,
+          "retrograde": true
+        }
+      },
+      "natalReferences": {
+        "Aries-0": {
+          "houses": {
+            "Sun": 11,
+            "Moon": 2,
+            "Mercury": 11,
+            "Venus": 12,
+            "Mars": 7,
+            "Jupiter": 9,
+            "Saturn": 2,
+            "Rahu": 8,
+            "Ketu": 2
+          },
+          "taraBala": {
+            "count": 5,
+            "tara": 5,
+            "name": "Pratyak",
+            "nakshatraIndex": 4
+          },
+          "sadeSati": {
+            "active": true,
+            "phase": "setting"
+          }
+        },
+        "Libra-12": {
+          "houses": {
+            "Sun": 5,
+            "Moon": 8,
+            "Mercury": 5,
+            "Venus": 6,
+            "Mars": 1,
+            "Jupiter": 3,
+            "Saturn": 8,
+            "Rahu": 2,
+            "Ketu": 8
+          },
+          "taraBala": {
+            "count": 20,
+            "tara": 2,
+            "name": "Sampat",
+            "nakshatraIndex": 4
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Pisces-26": {
+          "houses": {
+            "Sun": 12,
+            "Moon": 3,
+            "Mercury": 12,
+            "Venus": 1,
+            "Mars": 8,
+            "Jupiter": 10,
+            "Saturn": 3,
+            "Rahu": 9,
+            "Ketu": 3
+          },
+          "taraBala": {
+            "count": 6,
+            "tara": 6,
+            "name": "Sadhaka",
+            "nakshatraIndex": 4
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        }
+      }
+    },
+    {
+      "at": "2035-10-24T16:00:00Z",
+      "planets": {
+        "Sun": {
+          "longitude": 186.71268158580907,
+          "sign": "Libra",
+          "nakshatraIndex": 14,
+          "pada": 1,
+          "retrograde": false
+        },
+        "Moon": {
+          "longitude": 107.02863880938762,
+          "sign": "Cancer",
+          "nakshatraIndex": 8,
+          "pada": 1,
+          "retrograde": false
+        },
+        "Mercury": {
+          "longitude": 174.72932563811716,
+          "sign": "Virgo",
+          "nakshatraIndex": 13,
+          "pada": 1,
+          "retrograde": false
+        },
+        "Venus": {
+          "longitude": 206.7953329126336,
+          "sign": "Libra",
+          "nakshatraIndex": 15,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Mars": {
+          "longitude": 323.963035211822,
+          "sign": "Aquarius",
+          "nakshatraIndex": 24,
+          "pada": 2,
+          "retrograde": false
+        },
+        "Jupiter": {
+          "longitude": 23.21931219987955,
+          "sign": "Aries",
+          "nakshatraIndex": 1,
+          "pada": 3,
+          "retrograde": true
+        },
+        "Saturn": {
+          "longitude": 113.66468859010052,
+          "sign": "Cancer",
+          "nakshatraIndex": 8,
+          "pada": 3,
+          "retrograde": false
+        },
+        "Rahu": {
+          "longitude": 128.04330919161947,
+          "sign": "Leo",
+          "nakshatraIndex": 9,
+          "pada": 3,
+          "retrograde": true
+        },
+        "Ketu": {
+          "longitude": 308.04330919161947,
+          "sign": "Aquarius",
+          "nakshatraIndex": 23,
+          "pada": 1,
+          "retrograde": true
+        }
+      },
+      "natalReferences": {
+        "Aries-0": {
+          "houses": {
+            "Sun": 7,
+            "Moon": 4,
+            "Mercury": 6,
+            "Venus": 7,
+            "Mars": 11,
+            "Jupiter": 1,
+            "Saturn": 4,
+            "Rahu": 5,
+            "Ketu": 11
+          },
+          "taraBala": {
+            "count": 9,
+            "tara": 9,
+            "name": "Ati-Mitra",
+            "nakshatraIndex": 8
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Libra-12": {
+          "houses": {
+            "Sun": 1,
+            "Moon": 10,
+            "Mercury": 12,
+            "Venus": 1,
+            "Mars": 5,
+            "Jupiter": 7,
+            "Saturn": 10,
+            "Rahu": 11,
+            "Ketu": 5
+          },
+          "taraBala": {
+            "count": 24,
+            "tara": 6,
+            "name": "Sadhaka",
+            "nakshatraIndex": 8
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        },
+        "Pisces-26": {
+          "houses": {
+            "Sun": 8,
+            "Moon": 5,
+            "Mercury": 7,
+            "Venus": 8,
+            "Mars": 12,
+            "Jupiter": 2,
+            "Saturn": 5,
+            "Rahu": 6,
+            "Ketu": 12
+          },
+          "taraBala": {
+            "count": 10,
+            "tara": 1,
+            "name": "Janma",
+            "nakshatraIndex": 8
+          },
+          "sadeSati": {
+            "active": false,
+            "phase": null
+          }
+        }
+      }
+    }
+  ],
+  "crossingMonth": {
+    "year": 2024,
+    "month": 1
+  },
+  "signChanges": [
+    {
+      "planet": "Moon",
+      "fromSign": "Leo",
+      "toSign": "Virgo",
+      "at": "2024-01-02T12:58:53.203125Z"
+    },
+    {
+      "planet": "Moon",
+      "fromSign": "Virgo",
+      "toSign": "Libra",
+      "at": "2024-01-05T01:16:18.662110Z"
+    },
+    {
+      "planet": "Moon",
+      "fromSign": "Libra",
+      "toSign": "Scorpio",
+      "at": "2024-01-07T10:31:48.105469Z"
+    },
+    {
+      "planet": "Mercury",
+      "fromSign": "Scorpio",
+      "toSign": "Sagittarius",
+      "at": "2024-01-07T15:46:14.487305Z"
+    },
+    {
+      "planet": "Moon",
+      "fromSign": "Scorpio",
+      "toSign": "Sagittarius",
+      "at": "2024-01-09T15:41:23.789063Z"
+    },
+    {
+      "planet": "Moon",
+      "fromSign": "Sagittarius",
+      "toSign": "Capricorn",
+      "at": "2024-01-11T17:35:12.890625Z"
+    },
+    {
+      "planet": "Moon",
+      "fromSign": "Capricorn",
+      "toSign": "Aquarius",
+      "at": "2024-01-13T18:05:07.177735Z"
+    },
+    {
+      "planet": "Sun",
+      "fromSign": "Sagittarius",
+      "toSign": "Capricorn",
+      "at": "2024-01-14T21:13:45.292969Z"
+    },
+    {
+      "planet": "Moon",
+      "fromSign": "Aquarius",
+      "toSign": "Pisces",
+      "at": "2024-01-15T19:07:21.430665Z"
+    },
+    {
+      "planet": "Moon",
+      "fromSign": "Pisces",
+      "toSign": "Aries",
+      "at": "2024-01-17T22:03:42.583009Z"
+    },
+    {
+      "planet": "Venus",
+      "fromSign": "Scorpio",
+      "toSign": "Sagittarius",
+      "at": "2024-01-18T15:27:04.877930Z"
+    },
+    {
+      "planet": "Moon",
+      "fromSign": "Aries",
+      "toSign": "Taurus",
+      "at": "2024-01-20T03:22:46.479493Z"
+    },
+    {
+      "planet": "Moon",
+      "fromSign": "Taurus",
+      "toSign": "Gemini",
+      "at": "2024-01-22T10:52:42.524415Z"
+    },
+    {
+      "planet": "Moon",
+      "fromSign": "Gemini",
+      "toSign": "Cancer",
+      "at": "2024-01-24T20:17:01.289063Z"
+    },
+    {
+      "planet": "Moon",
+      "fromSign": "Cancer",
+      "toSign": "Leo",
+      "at": "2024-01-27T07:31:23.715821Z"
+    },
+    {
+      "planet": "Moon",
+      "fromSign": "Leo",
+      "toSign": "Virgo",
+      "at": "2024-01-29T20:14:30.996094Z"
+    }
+  ]
+}

@@ -107,7 +107,7 @@ export const getSiderealLongitude = (date: Date, tropicalLongitude: number): num
   return normalizeDegrees(tropicalLongitude - getLahiriAyanamsa(date));
 };
 
-const getPlanetEclipticLongitude = (date: Date, planet: PlanetName): number => {
+export const getPlanetEclipticLongitude = (date: Date, planet: PlanetName): number => {
   if (planet === 'Rahu' || planet === 'Ketu') {
     const t = getTFromJ2000(date);
     const nodeLongitude = normalizeDegrees(125.04452 - 1934.136261 * t);
