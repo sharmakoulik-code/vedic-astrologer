@@ -8,7 +8,10 @@ import {
   buildPersonalityInterpretation,
   buildRelationshipInterpretation,
   buildSuccessInterpretation,
+  getOccupants,
   getLuckyAssociations,
+  ordinal,
+  PLANET_INTERPRETATIONS,
 } from './interpretations';
 import { buildChart } from '../utils/chart';
 
@@ -83,9 +86,31 @@ describe('chart-driven report interpretations', () => {
   });
 });
 
-import { ordinal } from './interpretations';
 describe('ordinal', () => {
   it('formats house numbers correctly', () => {
     expect([1,2,3,4,10,11,12].map(ordinal)).toEqual(['1st','2nd','3rd','4th','10th','11th','12th']);
+  });
+
+  describe('house occupant wording', () => {
+    it('names each occupant in its own sentence', () => {
+      const planets = Object.values(firstChart.planets);
+      const [first, second] = planets;
+      const chartWithSharedHouse = {
+        ...firstChart,
+        planets: {
+          ...firstChart.planets,
+          [second.name]: { ...second, house: first.house },
+        },
+      };
+      const wording = getOccupants(chartWithSharedHouse, first.house!);
+
+      expect(wording).toContain(
+        `${first.name} is placed in this house. ${PLANET_INTERPRETATIONS[first.name].occupant}`,
+      );
+      expect(wording).toContain(
+        `${second.name} is placed in this house. ${PLANET_INTERPRETATIONS[second.name].occupant}`,
+      );
+      expect(wording).not.toContain(`${first.name}:`);
+    });
   });
 });

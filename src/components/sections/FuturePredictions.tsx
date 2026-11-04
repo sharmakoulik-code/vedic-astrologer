@@ -1,9 +1,8 @@
 import React from 'react';
 import type { BirthChart } from '../../utils/chart';
 import { PLANET_INTERPRETATIONS, buildFutureInterpretation } from '../../data/interpretations';
+import { formatReportDate } from '../../utils/reportFormatting';
 import { Hourglass, CalendarDays, Sunrise } from 'lucide-react';
-
-const formatDate = (value: string) => new Date(`${value}T00:00:00`).toLocaleDateString();
 
 export const FuturePredictions: React.FC<{ chart: BirthChart }> = ({ chart }) => {
   const interpretation = buildFutureInterpretation(chart);
@@ -26,14 +25,14 @@ export const FuturePredictions: React.FC<{ chart: BirthChart }> = ({ chart }) =>
               <CalendarDays className="w-4 h-4 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-mystic-900 mb-3">
-              Mahadasha: {interpretation.current.lord} ({formatDate(interpretation.current.start)} – {formatDate(interpretation.current.end)})
+              Mahadasha: {interpretation.current.lord} ({formatReportDate(interpretation.current.start)} – {formatReportDate(interpretation.current.end)})
             </h3>
             <p className="text-gray-700 leading-relaxed">
               {PLANET_INTERPRETATIONS[interpretation.current.lord as keyof typeof PLANET_INTERPRETATIONS].dasha}
             </p>
             {interpretation.antardasha && (
               <p className="text-gray-700 leading-relaxed mt-3">
-                Antardasha: {interpretation.antardasha.lord} ({formatDate(interpretation.antardasha.start)} – {formatDate(interpretation.antardasha.end)}). {PLANET_INTERPRETATIONS[interpretation.antardasha.lord as keyof typeof PLANET_INTERPRETATIONS].dasha}
+                Antardasha: {interpretation.antardasha.lord} ({formatReportDate(interpretation.antardasha.start)} – {formatReportDate(interpretation.antardasha.end)}). {PLANET_INTERPRETATIONS[interpretation.antardasha.lord as keyof typeof PLANET_INTERPRETATIONS].dasha}
               </p>
             )}
           </div>
@@ -44,7 +43,7 @@ export const FuturePredictions: React.FC<{ chart: BirthChart }> = ({ chart }) =>
                 <Sunrise className="w-4 h-4 text-white" />
               </div>
               <h3 className="text-xl font-bold text-mystic-900 mb-3">
-                Next Mahadasha: {period.lord} ({formatDate(period.start)} – {formatDate(period.end)})
+                Next Mahadasha: {period.lord} ({formatReportDate(period.start)} – {formatReportDate(period.end)})
               </h3>
               <p className="text-gray-700 leading-relaxed">
                 {PLANET_INTERPRETATIONS[period.lord as keyof typeof PLANET_INTERPRETATIONS].dasha}

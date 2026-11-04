@@ -169,10 +169,10 @@ const getHouseSign = (chart: BirthChart, house: number): SignName | null => {
   return SIGNS[(lagnaIndex + house - 1) % SIGNS.length];
 };
 
-const getOccupants = (chart: BirthChart, house: number): string => {
+export const getOccupants = (chart: BirthChart, house: number): string => {
   const occupants = Object.values(chart.planets)
     .filter((planet) => planet.house === house)
-    .map((planet) => `${planet.name}: ${PLANET_INTERPRETATIONS[planet.name].occupant}`);
+    .map((planet) => `${planet.name} is placed in this house. ${PLANET_INTERPRETATIONS[planet.name].occupant}`);
   return occupants.length ? occupants.join(' ') : 'No listed planet occupies this house.';
 };
 

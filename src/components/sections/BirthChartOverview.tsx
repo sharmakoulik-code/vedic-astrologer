@@ -1,6 +1,7 @@
 import React from 'react';
 import { UserDetails } from '../../types';
 import { buildChart } from '../../utils/chart';
+import { capitalizeName, formatReportDate } from '../../utils/reportFormatting';
 import { Compass, Moon, Sun, Star, Wind } from 'lucide-react';
 
 export const BirthChartOverview: React.FC<{ user: UserDetails; chart?: ReturnType<typeof buildChart> }> = ({ user, chart }) => {
@@ -26,7 +27,7 @@ export const BirthChartOverview: React.FC<{ user: UserDetails; chart?: ReturnTyp
       </h2>
 
       <p className="text-premium mb-8">
-        Welcome, <span className="text-yellow-300 font-semibold">{user.name || 'friend'}</span>. Based on your birth details from <span className="text-yellow-200">{displayPlace}</span> on <span className="text-yellow-200">{new Date(user.dob || Date.now()).toLocaleDateString()}</span> at <span className="text-yellow-200">{displayTime}</span>. {resolvedChart.needsTimezone ? 'Add a timezone to calculate your Lagna.' : hasLocation ? 'The chart below reflects the local birth time and calculated ascendant.' : 'A birth place and coordinates are needed for Lagna and house placements. Without them, only the planetary and nakshatra positions can be read.'}
+        Welcome, <span className="text-yellow-300 font-semibold">{user.name ? capitalizeName(user.name) : 'friend'}</span>. Based on your birth details from <span className="text-yellow-200">{displayPlace}</span> on <span className="text-yellow-200">{formatReportDate(user.dob || new Date())}</span> at <span className="text-yellow-200">{displayTime}</span>. {resolvedChart.needsTimezone ? 'Add a timezone to calculate your Lagna.' : hasLocation ? 'The chart below reflects the local birth time and calculated ascendant.' : 'A birth place and coordinates are needed for Lagna and house placements. Without them, only the planetary and nakshatra positions can be read.'}
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">

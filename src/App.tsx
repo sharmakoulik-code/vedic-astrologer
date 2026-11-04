@@ -26,6 +26,7 @@ import {
 import { motion } from 'framer-motion';
 import { useMetaTags } from './hooks/useMetaTags';
 import { generateMetaTags } from './config/seo';
+import { capitalizeName, formatReportDate } from './utils/reportFormatting';
 import {
   buildSoftwareApplicationSchema,
   buildWebPageSchema,
@@ -455,7 +456,7 @@ function App() {
                   className="text-base sm:text-lg md:text-xl text-mystic-200 max-w-2xl mx-auto leading-relaxed"
                   variants={itemVariants}
                 >
-                  Your personalized cosmic blueprint for <span className="font-semibold text-white">{userData.name || 'your chart'}</span>, mapped from {userData.birthPlace || 'your birth place'} on {userData.dob ? new Date(userData.dob).toLocaleDateString() : 'your date of birth'} at {userData.birthTime || 'an approximate time'}.
+                  Your personalized cosmic blueprint for <span className="font-semibold text-white">{userData.name ? capitalizeName(userData.name) : 'your chart'}</span>, mapped from {userData.birthPlace || 'your birth place'} on {userData.dob ? formatReportDate(userData.dob) : 'your date of birth'} at {userData.birthTime || 'an approximate time'}.
                 </motion.p>
               </div>
             </motion.div>
