@@ -75,6 +75,14 @@ describe('chart utility', () => {
       expect(Math.abs(diff(chart.lagnaLongitude as number, c.ascendant))).toBeLessThan(0.1);
     });
 
+    it('every planet is in the correct whole-sign house', () => {
+      const lagnaSign = Math.floor(c.ascendant / 30);
+      for (const p of Object.keys(c.planets)) {
+        const expected = ((Math.floor(c.planets[p] / 30) - lagnaSign + 12) % 12) + 1;
+        expect((chart.planets as any)[p].house).toBe(expected);
+      }
+    });
+
     it('Vimshottari dasha order is exact and dates are within 4 days', () => {
       expect(chart.dasha.nextMahadasha[0].lord).toBe(c.dashaLord);
       c.periods.forEach((ref, i) => {

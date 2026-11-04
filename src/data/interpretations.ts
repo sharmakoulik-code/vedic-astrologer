@@ -1,5 +1,11 @@
 import type { BirthChart, PlanetName, SignName } from '../utils/chart';
 
+export const ordinal = (n: number): string => {
+  const suffixes = ['th', 'st', 'nd', 'rd'];
+  const v = n % 100;
+  return `${n}${suffixes[(v - 20) % 10] || suffixes[v] || suffixes[0]}`;
+};
+
 const SIGNS: SignName[] = [
   'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
   'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces',
@@ -178,10 +184,10 @@ const formatHouse = (chart: BirthChart, house: number): string => {
   const ruler = SIGN_RULERS[sign];
   const rulerHouse = chart.planets[ruler].house;
   const rulerPlacement = rulerHouse
-    ? `${ruler} rules ${sign} here and is placed in the ${rulerHouse}th house.`
+    ? `${ruler} rules ${sign} here and is placed in the ${ordinal(rulerHouse)} house.`
     : `${ruler} rules ${sign} here; its house placement is not available.`;
 
-  return `The ${house}th house (${houseInfo.name}) is in ${sign}, a sign traditionally associated with ${SIGN_INTERPRETATIONS[sign].lagna.toLowerCase().replace(/^an? [a-z]+ lagna is traditionally associated with /, '').replace(/;.*$/, '')}. This house covers ${houseInfo.theme}. ${rulerPlacement} ${getOccupants(chart, house)}`;
+  return `The ${ordinal(house)} house (${houseInfo.name}) is in ${sign}, a sign traditionally associated with ${SIGN_INTERPRETATIONS[sign].lagna.toLowerCase().replace(/^an? [a-z]+ lagna is traditionally associated with /, '').replace(/;.*$/, '')}. This house covers ${houseInfo.theme}. ${rulerPlacement} ${getOccupants(chart, house)}`;
 };
 
 export const buildPersonalityInterpretation = (chart: BirthChart) => ({

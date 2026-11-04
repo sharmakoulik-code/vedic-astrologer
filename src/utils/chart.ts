@@ -152,9 +152,13 @@ const getHouseNumberForLongitude = (longitude: number, lagnaLongitude: number | 
     return null;
   }
 
-  const relative = normalizeDegrees(longitude - lagnaLongitude);
-  return Math.floor(relative / 30) + 1;
+  // Whole-sign houses: the Lagna sign is house 1, the next sign is house 2, and so on,
+  // regardless of the exact degree of the Lagna.
+  const planetSign = Math.floor(normalizeDegrees(longitude) / DEGREE_IN_SIGN);
+  const lagnaSign = Math.floor(normalizeDegrees(lagnaLongitude) / DEGREE_IN_SIGN);
+  return ((planetSign - lagnaSign + 12) % 12) + 1;
 };
+
 
 const getWholeSignHousePlacements = (lagna: string | null): Record<string, number> | null => {
   if (!lagna) {

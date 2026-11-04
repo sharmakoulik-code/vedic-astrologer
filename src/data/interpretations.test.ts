@@ -82,3 +82,10 @@ describe('chart-driven report interpretations', () => {
     }
   });
 });
+
+import { ordinal } from './interpretations';
+describe('ordinal', () => {
+  it('formats house numbers correctly', () => {
+    expect([1,2,3,4,10,11,12].map(ordinal)).toEqual(['1st','2nd','3rd','4th','10th','11th','12th']);
+  });
+});
